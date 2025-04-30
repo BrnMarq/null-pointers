@@ -1,5 +1,6 @@
-CXX         = g++ -std=c++17
-WARN        = -Wall -Wextra -Wcast-align -Wno-sign-compare -Wno-write-strings -Wno-parentheses -Wfloat-equal -pedantic
+CXX         = clang++ -std=c++17
+WARN        = -Wall -Wextra -Wcast-align -Wno-sign-compare -Wno-write-strings \
+              -Wno-parentheses -Wfloat-equal -pedantic
 FLAGS       = -DDEBUG -g -O0
 
 # Libs
@@ -13,19 +14,29 @@ TESTDIR     = ./test
 TEST        = $(wildcard $(TESTDIR)/src/*.cpp)
 MKTEST      = $(TEST:$(TESTDIR)/src/%.cpp=$(TESTDIR)/bin/%)
 
-INCLUDEPATH = -I$(LIB)/include
-LIBLINK     = $(OBJECTS) -lpthread 
+# Main
+MAINDIR     = ./main
+MAIN        = $(wildcard $(MAINDIR)/src/*.cpp)
+MKMAIN      = $(MAIN:$(MAINDIR)/src/%.cpp=$(MAINDIR)/bin/%)
 
-all: test
+INCLUDEPATH = -I$(LIB)/include
+LIBLINK     = $(OBJECTS) -lpthread
+
+all: main test
 
 $(LIB)/obj/%.o : $(LIB)/src/%.cpp
 	$(CXX) $(FLAGS) $(INCLUDEPATH) -c $< -o $@
-
+	
 $(TESTDIR)/bin/%: $(TESTDIR)/src/%.cpp $(OBJECTS)
 	$(CXX) $(FLAGS) $(INCLUDEPATH) $< -o $@ $(LIBLINK)
 
 test: $(TEST) $(INCLUDES) $(SOURCES) $(MKTEST)
 
+$(MAINDIR)/bin/%: $(MAINDIR)/src/%.cpp $(OBJECTS)
+	$(CXX) $(FLAGS) $(INCLUDEPATH) $< -o $@ $(LIBLINK)
+	
+main: $(MAIN) $(INCLUDES) $(SOURCES) $(MKMAIN)
+
 .PHONY:
 clean:
-	$(RM) $(MKTEST)
+	$(RM) $(MKTEST) $(MKMAIN)
