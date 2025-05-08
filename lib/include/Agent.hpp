@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <ctime>
 
@@ -7,9 +9,11 @@ class Agent
 {
 public:
 private:
-  std::string name;
+  // * Logic Info
   time_t available_time;
   // TODO how to get deparment to be enum
   std::string department;
   level expertise;
+  // * Extra info
+  std::string name;
 };
