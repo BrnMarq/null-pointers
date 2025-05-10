@@ -7,12 +7,12 @@
 class Matcher
 {
 public:
-  using AgentVector = std::vector<Agent>;
-  using TaskVector = std::vector<Task>;
-  using ATArcVector = std::vector<Arc<Agent, Task>>;
+  using AgentVectorT = std::vector<Agent>;
+  using TaskVectorT = std::vector<Task>;
+  using ATArcVectorT = std::vector<Arc<Agent, Task>>;
 
 private:
-  AgentVector agents;
-  TaskVector tasks;
-  ATArcVector arcs;
+  AgentVectorT agents;
+  TaskVectorT tasks;
+  ATArcVectorT arcs;
 };
