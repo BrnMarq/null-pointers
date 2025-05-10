@@ -1,5 +1,9 @@
 #include <Arc.hpp>
 
-template <typename From, typename To>
-Arc<From, To>::Arc(From _from, To _to, float _weight, size_t _flow, size_t _capacity) noexcept
-    : from{_from}, to{_to}, weight{_weight}, flow{_flow}, capacity{_capacity} {};
+template <class From, class To, class Weight, class Capacity>
+Arc<From, To, Weight, Capacity>::Arc(From _from, To _to, size_t _flow) noexcept
+    : from{_from}, to{_to}, flow{_flow}
+{
+  weight = Weight(from, to);
+  capacity = Capacity(from, to);
+};
