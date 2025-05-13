@@ -33,6 +33,16 @@ int main(int argc, char *argv[])
     {
       throw InvalidCommandException(arg);
     }
+
+    if (arg == "np")
+    {
+      std::filesystem::path path = "../../.np";
+
+      if (!std::filesystem::exists(path))
+      {
+        std::filesystem::create_directory(path);
+      }
+    }
   }
   // std::ifstream file("../../.np/agents.json");
   // json agents = json::parse(file);
