@@ -11,6 +11,10 @@ public:
   using TaskVectorT = std::vector<Task>;
   using ATArcVectorT = std::vector<Arc<Agent, Task>>;
 
+  const AgentVectorT &get_agents() const noexcept;
+  const TaskVectorT &get_tasks() const noexcept;
+  const ATArcVectorT &get_arcs() const noexcept;
+
 private:
   AgentVectorT agents;
   TaskVectorT tasks;
