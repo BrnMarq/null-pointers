@@ -11,4 +11,5 @@ std::ostream &operator<<(std::ostream &out, Agent *a);
 std::ostream &operator<<(std::ostream &out, Task *t);
 
 // TODO
-std::ostream &operator<<(std::ostream &out, Arc *a);
+template <class From, class To, class Weight, class Capacity>
+std::ostream &operator<<(std::ostream &out, Arc<From, To, Weight, Capacity> *a);
