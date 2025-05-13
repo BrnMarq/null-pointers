@@ -53,7 +53,7 @@ public:
     return weight;
   }
 
-  const size_t &get_capcity() const noexcept
+  const size_t &get_capacity() const noexcept
   {
     return capacity;
   }
