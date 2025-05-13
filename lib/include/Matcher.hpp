@@ -22,7 +22,7 @@ public:
     // a(Date + estimated - Dead line)+b.abs(Difficulty - Expertise): Tiempo de sobra
     float time_gap = std::chrono::duration_cast<std::chrono::hours>(task.get_dead_line() - now - task.get_estimated_time()).count();
     float difficulty_gap = std::abs(static_cast<int>(agent.get_expertise()) - static_cast<int>(task.get_difficulty()));
-    return time_gap + difficulty_gap;
+    return (Configs::time_gap_multiplier * time_gap) + (Configs::difficulty_gap_multiplier * difficulty_gap);
   }
 };
 
