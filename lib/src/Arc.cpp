@@ -37,3 +37,13 @@ const size_t &Arc<From, To, Weight, Capacity>::get_flow() const noexcept
 {
   return flow;
 }
+
+template <class From, class To, class Weight, class Capacity>
+void Arc<From, To, Weight, Capacity>::push_flow(size_t &_flow) noexcept
+{
+  if (_flow > (capacity - flow))
+  {
+    return;
+  }
+  flow += _flow;
+}
