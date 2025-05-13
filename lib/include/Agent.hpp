@@ -12,6 +12,11 @@ class Agent
 public:
   Agent(std::chrono::hours _available_time, std::string _deparment, level _expertise, std::string _name) noexcept;
 
+  struct Hash
+  {
+    size_t operator()(const Agent &v) const noexcept;
+  };
+
   const std::chrono::hours &get_available_time() const noexcept;
 
   const level &get_expertise() const noexcept;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <cmath>
 
 #include "Agent.hpp"
 #include "Task.hpp"
@@ -16,11 +17,26 @@ public:
 
   Type operator()(Agent agent, Task task) const noexcept
   {
-    // std::chrono::time_point now{std::chrono::system_clock::now()};
-    // std::chrono::year_month_day now_date{std::chrono::floor<std::chrono::days>(now)};
-    // // a(Date + estimated - Dead line)+b.abs(Difficulty - Expertise): Tiempo de sobra
-    // std::chrono::year_month_day time_gap = (now_date - task.get_dead_line());
-    return ZERO;
+    std::chrono::sys_days now{floor<std::chrono::days>(std::chrono::system_clock::now())};
+
+    // a(Date + estimated - Dead line)+b.abs(Difficulty - Expertise): Tiempo de sobra
+    float time_gap = std::chrono::duration_cast<std::chrono::hours>(task.get_dead_line() - now - task.get_estimated_time()).count();
+    float difficulty_gap = std::abs((int)agent.get_expertise() - (int)task.get_difficulty());
+    return time_gap + difficulty_gap;
+  }
+};
+
+class Capacity
+{
+public:
+  using Type = size_t;
+
+  static constexpr Type ZERO = 0;
+  static constexpr Type MAX = std::numeric_limits<Type>::max();
+
+  Type operator()(Agent agent, Task task) const noexcept
+  {
+    return task.get_estimated_time().count();
   }
 };
 
@@ -29,8 +45,8 @@ class Matcher
 public:
   using AgentVectorT = std::vector<Agent>;
   using TaskVectorT = std::vector<Task>;
-  using ATArcVectorT = std::vector<Arc<Agent, Task>>;
-  using MatchT = std::unordered_map<Agent, TaskVectorT>;
+  using ATArcVectorT = std::vector<Arc<Agent, Task, Weight, Capacity>>;
+  using MatchT = std::unordered_map<Agent, TaskVectorT, Agent::Hash>;
 
   const AgentVectorT &get_agents() const noexcept;
 
