@@ -1,8 +1,8 @@
 #include <iostream>
-#include <nlohmann/json.hpp>
 #include <fstream>
 #include <typeinfo>
 
+#include "json.hpp"
 #include <Agent.hpp>
 #include <Task.hpp>
 
