@@ -45,8 +45,15 @@ int main()
   std::chrono::sys_days now{floor<std::chrono::days>(std::chrono::system_clock::now())};
 
   // std::chrono::year_month_day ymd{std::chrono::floor<std::chrono::days>(now)};
+  std::chrono::hours estimated_time{12};
+  std::cout << now << std::endl;
+  auto later = now + estimated_time;
+  std::cout << later << std::endl;
 
-  // ymd = ymd + std::chrono::day(50);
+  std::chrono::sys_days tomorrow{std::chrono::year(2025) / std::chrono::month(5) / std::chrono::day(14)};
+  std::cout << tomorrow << std::endl;
+
+  std::cout << std::chrono::duration_cast<std::chrono::hours>(tomorrow - later).count() << std::endl;
 
   // // ymd = ymd + std::chrono::months(4);
 
