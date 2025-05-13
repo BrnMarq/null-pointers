@@ -38,30 +38,15 @@ class Arc
 public:
   Arc(From _from, To _to, size_t _flow) noexcept;
 
-  const From &get_from() const noexcept
-  {
-    return from;
-  }
+  const From &get_from() const noexcept;
 
-  const To &get_to() const noexcept
-  {
-    return to;
-  }
+  const To &get_to() const noexcept;
 
-  const float &get_weigth() const noexcept
-  {
-    return weight;
-  }
+  const float &get_weigth() const noexcept;
 
-  const size_t &get_capacity() const noexcept
-  {
-    return capacity;
-  }
+  const size_t &get_capacity() const noexcept;
 
-  const size_t &get_flow() const noexcept
-  {
-    return flow;
-  }
+  const size_t &get_flow() const noexcept;
 
   void push_flow(size_t &_flow) noexcept;
 
