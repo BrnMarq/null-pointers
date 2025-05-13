@@ -1,3 +1,5 @@
+#pragma once
+
 #include <vector>
 
 #include "Agent.hpp"
@@ -38,6 +40,8 @@ public:
 
   // Todo
   MatchT create_match() noexcept;
+
+  void print_match(MatchT match) const noexcept;
 
 private:
   AgentVectorT agents;
