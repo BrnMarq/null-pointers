@@ -19,6 +19,8 @@ public:
 
   const std::chrono::hours &get_available_time() const noexcept;
 
+  const std::string &get_department() const noexcept;
+
   const level &get_expertise() const noexcept;
 
   const std::string &get_name() const noexcept;

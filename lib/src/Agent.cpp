@@ -14,6 +14,11 @@ const std::chrono::hours &Agent::get_available_time() const noexcept
     return available_time;
 }
 
+const std::string &Agent::get_department() const noexcept
+{
+    return department;
+}
+
 const level &Agent::get_expertise() const noexcept
 {
     return expertise;
