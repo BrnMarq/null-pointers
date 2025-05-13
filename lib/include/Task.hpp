@@ -1,18 +1,18 @@
 #pragma once
 
 #include <string>
-#include <ctime>
+#include <chrono>
 
 #include "Types.hpp"
 
 class Task
 {
 public:
-  Task(time_t _estimated_time, time_t _dead_line, std::string _department, level _difficulty, std::string _title, std::string _requirements) noexcept;
+  Task(std::chrono::day _estimated_time, std::chrono::year_month_day _dead_line, std::string _department, level _difficulty, std::string _title, std::string _requirements) noexcept;
 
-  const time_t &get_estimated_time() const noexcept;
+  const std::chrono::day &get_estimated_time() const noexcept;
 
-  const time_t &get_dead_line() const noexcept;
+  const std::chrono::year_month_day &get_dead_line() const noexcept;
 
   const std::string &get_department() const noexcept;
 
@@ -24,8 +24,8 @@ public:
 
 private:
   // * Logic info
-  time_t estimated_time;
-  time_t dead_line;
+  std::chrono::day estimated_time;
+  std::chrono::year_month_day dead_line;
   // TODO how to get deparment to be enum
   std::string department;
   level difficulty;

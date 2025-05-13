@@ -1,14 +1,14 @@
 #include <Task.hpp>
 
-Task::Task(time_t _estimated_time, time_t _dead_line, std::string _department, level _difficulty, std::string _title, std::string _requirements) noexcept
+Task::Task(std::chrono::day _estimated_time, std::chrono::year_month_day _dead_line, std::string _department, level _difficulty, std::string _title, std::string _requirements) noexcept
     : estimated_time{_estimated_time}, dead_line{_dead_line}, department{_department}, difficulty{_difficulty}, title{_title}, requirements{_requirements} {};
 
-const time_t &Task::get_estimated_time() const noexcept
+const std::chrono::day &Task::get_estimated_time() const noexcept
 {
     return estimated_time;
 }
 
-const time_t &Task::get_dead_line() const noexcept
+const std::chrono::year_month_day &Task::get_dead_line() const noexcept
 {
     return dead_line;
 }
