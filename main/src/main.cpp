@@ -5,6 +5,8 @@
 #include "json.hpp"
 #include <Agent.hpp>
 #include <Task.hpp>
+#include <Definitions.hpp>
+#include <Exception.hpp>
 
 using json = nlohmann::json;
 
@@ -21,8 +23,17 @@ level get_level_from_string(const std::string &_level)
   return level_map.at(_level);
 }
 
-int main()
+int main(int argc, char *argv[])
 {
+  if (argc > 1)
+  {
+    std::string arg(argv[1]);
+
+    if (!is_valid_argument(arg))
+    {
+      throw InvalidCommandException(arg);
+    }
+  }
   // std::ifstream file("../../.np/agents.json");
   // json agents = json::parse(file);
 
