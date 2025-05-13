@@ -43,7 +43,7 @@ void Arc<From, To, Weight, Capacity>::push_flow(size_t &_flow) noexcept
 {
   if (_flow > (capacity - flow))
   {
-    return;
+    throw OverflowException(_flow, flow, capacity);
   }
   flow += _flow;
 }

@@ -2,6 +2,8 @@
 #include <stddef.h>
 #include <limits>
 
+#include "Exception.hpp"
+
 template <class From, class To>
 class DefaultWeight
 {
