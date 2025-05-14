@@ -28,3 +28,16 @@ level get_level_from_string(const std::string &_level)
 
     return level_map.at(_level);
 }
+
+std::string level_to_string(const level &_level)
+{
+    std::unordered_map<level, std::string> level_map =
+        {
+            {level::novice, "novice"},
+            {level::beginner, "beginner"},
+            {level::competent, "competent"},
+            {level::proficient, "proficient"},
+            {level::expert, "expert"}};
+
+    return level_map.at(_level);
+}

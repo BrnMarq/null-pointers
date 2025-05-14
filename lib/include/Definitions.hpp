@@ -31,3 +31,5 @@ bool is_valid_argument(const std::string &arg);
 bool department_exists(const std::string &deparment);
 
 level get_level_from_string(const std::string &_level);
+
+std::string level_to_string(const level &_level);

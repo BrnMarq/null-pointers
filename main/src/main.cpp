@@ -8,6 +8,7 @@
 #include <Task.hpp>
 #include <Definitions.hpp>
 #include <Exception.hpp>
+#include <IOUtils.hpp>
 
 using json = nlohmann::json;
 
@@ -71,6 +72,8 @@ int main(int argc, char *argv[])
 
     Agent agent(_available_time, _deparment, _level, _name);
 
+    std::cout << &agent << std::endl;
+
     agents_list.push_back(agent);
   }
 
@@ -95,6 +98,8 @@ int main(int argc, char *argv[])
     std::string _title = tsk["title"].get<std::string>();
 
     Task task(_estimated_time, _dead_line, _deparment, _difficulty, _title, "");
+
+    std::cout << &task << std::endl;
     task_list.push_back(task);
   };
 
