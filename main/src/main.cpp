@@ -54,9 +54,6 @@ int main(int argc, char *argv[])
   std::vector<Agent> agents_list;
   std::vector<Task> task_list;
 
-  // std::string fecha = "2025-08-09";
-  // auto y = string_to_date(fecha);
-
   for (const auto &ag : agents)
   {
     std::chrono::hours _available_time(ag["available_time"].get<int>());
@@ -104,8 +101,8 @@ int main(int argc, char *argv[])
   };
 
   // std::cout << agents_list.size() << std::endl;
-  // std::cout << task_list.size() << std::endl;
-  // std::cout << Departments::departments.size() << std::endl;
+  //  std::cout << task_list.size() << std::endl;
+  std::cout << Departments::departments << std::endl;
 
   std::chrono::sys_days now{floor<std::chrono::days>(std::chrono::system_clock::now())};
 

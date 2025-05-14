@@ -10,6 +10,12 @@ std::ostream &operator<<(std::ostream &out, Task *t);
 template <class From, class To, class Weight, class Capacity>
 std::ostream &operator<<(std::ostream &out, Arc<From, To, Weight, Capacity> *a);
 
+template <typename T>
+std::ostream &operator<<(std::ostream &out, const std::vector<T> &v);
+
+template <typename C>
+void print_container(const C &c, char ldelim, char rdelim, std::ostream &out);
+
 std::ostream &operator<<(std::ostream &out, Agent *a)
 {
     out << "Name: " << a->get_name() << "\n"
@@ -49,4 +55,31 @@ std::ostream &operator<<(std::ostream &out, Arc<From, To, Weight, Capacity> *a)
         << "Weight: " << a->get_weigth() << "\n";
 
     return out;
+}
+
+template <typename T>
+std::ostream &operator<<(std::ostream &out, const std::vector<T> &v)
+{
+    print_container(v, '[', ']', out);
+    return out;
+}
+
+template <typename C>
+void print_container(const C &c, char ldelim, char rdelim, std::ostream &out)
+{
+    out << ldelim;
+    auto it = c.begin();
+
+    if (it != c.end())
+    {
+        out << *it;
+        ++it;
+    }
+
+    for (; it != c.end(); ++it)
+    {
+        out << ", " << *it;
+    }
+
+    out << rdelim;
 }
