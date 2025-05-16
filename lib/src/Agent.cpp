@@ -43,3 +43,18 @@ bool Agent::is_available()
 {
     return available_time > std::chrono::hours(0);
 }
+
+bool Agent::operator==(const Agent &a) const noexcept
+{
+    std::chrono::hours available_time;
+    // TODO how to get deparment to be enum
+    std::string department;
+    level expertise;
+    // * Extra info
+    std::string name;
+    std::vector<Task> assigned_tasks;
+    return (a.get_available_time() == available_time &&
+            a.get_department() == department &&
+            a.get_expertise() == expertise &&
+            a.get_name() == name);
+}

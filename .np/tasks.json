@@ -1,310 +1,310 @@
 [
-  {
-    "estimated_time": 10,
-    "dead_line": "2024-12-31",
-    "department": "Ingeniería de Software",
-    "difficulty": "beginner",
-    "title": "Implementar API REST para módulo de autenticación"
-  },
-  {
-    "estimated_time": 25,
-    "dead_line": "2025-02-28",
-    "department": "Inteligencia Artificial",
-    "difficulty": "expert",
-    "title": "Optimizar modelo de recomendación para reducir latencia en 30%"
-  },
-  {
-    "estimated_time": 2,
-    "dead_line": "2024-10-04",
-    "department": "Recursos Humanos",
-    "difficulty": "novice",
-    "title": "Actualizar base de datos de candidatos en Workday"
-  },
-  {
-    "estimated_time": 40,
-    "dead_line": "2025-06-30",
-    "department": "Cloud Computing",
-    "difficulty": "proficient",
-    "title": "Migrar base de datos on-premise a AWS Aurora"
-  },
-  {
-    "estimated_time": 15,
-    "dead_line": "2024-11-30",
-    "department": "Seguridad Informática",
-    "difficulty": "competent",
-    "title": "Auditar permisos de acceso IAM en la nube"
-  },
-  {
-    "estimated_time": 5,
-    "dead_line": "2024-10-10",
-    "department": "Diseño de UX/UI",
-    "difficulty": "beginner",
-    "title": "Crear prototipo en Figma para nueva página de checkout"
-  },
-  {
-    "estimated_time": 8,
-    "dead_line": "2024-11-30",
-    "department": "Marketing Digital",
-    "difficulty": "competent",
-    "title": "Lanzar campaña en redes sociales para nuevo producto"
-  },
-  {
-    "estimated_time": 30,
-    "dead_line": "2025-05-01",
-    "department": "Operaciones IT",
-    "difficulty": "proficient",
-    "title": "Implementar sistema de monitorización centralizado (Prometheus/Grafana)"
-  },
-  {
-    "estimated_time": 3,
-    "dead_line": "2024-10-18",
-    "department": "Legal",
-    "difficulty": "novice",
-    "title": "Revisar cláusulas de privacidad en contratos estándar"
-  },
-  {
-    "estimated_time": 12,
-    "dead_line": "2024-12-31",
-    "department": "QA & Testing",
-    "difficulty": "beginner",
-    "title": "Automatizar pruebas de regresión para versión móvil"
-  },
-  {
-    "estimated_time": 20,
-    "dead_line": "2025-05-01",
-    "department": "Product Management",
-    "difficulty": "proficient",
-    "title": "Definir roadmap de producto para el próximo año fiscal"
-  },
-  {
-    "estimated_time": 1,
-    "dead_line": "2024-10-07",
-    "department": "Ventas",
-    "difficulty": "novice",
-    "title": "Actualizar listado de leads en Salesforce"
-  },
-  {
-    "estimated_time": 6,
-    "dead_line": "2024-11-30",
-    "department": "Cloud Computing",
-    "difficulty": "competent",
-    "title": "Configurar autoescalado para instancias EC2"
-  },
-  {
-    "estimated_time": 4,
-    "dead_line": "2024-10-18",
-    "department": "Diseño de UX/UI",
-    "difficulty": "beginner",
-    "title": "Realizar test A/B en botón de llamada a acción"
-  },
-  {
-    "estimated_time": 35,
-    "dead_line": "2025-06-30",
-    "department": "Ingeniería de Software",
-    "difficulty": "proficient",
-    "title": "Implementar sistema de caché distribuido (Redis)"
-  },
-  {
-    "estimated_time": 7,
-    "dead_line": "2024-11-30",
-    "department": "Seguridad Informática",
-    "difficulty": "competent",
-    "title": "Rotar claves de cifrado en bases de datos"
-  },
-  {
-    "estimated_time": 18,
-    "dead_line": "2025-02-28",
-    "department": "Recursos Humanos",
-    "difficulty": "proficient",
-    "title": "Diseñar programa de liderazgo para gerentes"
-  },
-  {
-    "estimated_time": 2,
-    "dead_line": "2024-10-07",
-    "department": "QA & Testing",
-    "difficulty": "novice",
-    "title": "Ejecutar suite de pruebas manuales para patch crítico"
-  },
-  {
-    "estimated_time": 9,
-    "dead_line": "2024-12-31",
-    "department": "Marketing Digital",
-    "difficulty": "competent",
-    "title": "Analizar métricas de conversión y optimizar embudos"
-  },
-  {
-    "estimated_time": 22,
-    "dead_line": "2025-05-01",
-    "department": "Product Management",
-    "difficulty": "proficient",
-    "title": "Priorizar features para próximo lanzamiento usando RICE"
-  },
-  {
-    "estimated_time": 5,
-    "dead_line": "2024-10-18",
-    "department": "Legal",
-    "difficulty": "beginner",
-    "title": "Documentar procesos de cumplimiento GDPR"
-  },
-  {
-    "estimated_time": 3,
-    "dead_line": "2024-10-07",
-    "department": "Ventas",
-    "difficulty": "novice",
-    "title": "Preparar kits de bienvenida para nuevos clientes"
-  },
-  {
-    "estimated_time": 15,
-    "dead_line": "2024-11-30",
-    "department": "Diseño de UX/UI",
-    "difficulty": "competent",
-    "title": "Rediseñar sistema de diseño para coherencia en productos"
-  },
-  {
-    "estimated_time": 8,
-    "dead_line": "2024-11-30",
-    "department": "Cloud Computing",
-    "difficulty": "beginner",
-    "title": "Configurar backups automatizados para RDS"
-  },
-  {
-    "estimated_time": 30,
-    "dead_line": "2025-05-01",
-    "department": "Ingeniería de Software",
-    "difficulty": "proficient",
-    "title": "Integrar sistema de logging unificado (ELK Stack)"
-  },
-  {
-    "estimated_time": 1,
-    "dead_line": "2024-10-04",
-    "department": "QA & Testing",
-    "difficulty": "novice",
-    "title": "Verificar fixes para bugs menores"
-  },
-  {
-    "estimated_time": 12,
-    "dead_line": "2024-12-31",
-    "department": "Recursos Humanos",
-    "difficulty": "competent",
-    "title": "Implementar programa de bienestar laboral"
-  },
-  {
-    "estimated_time": 6,
-    "dead_line": "2024-10-18",
-    "department": "Marketing Digital",
-    "difficulty": "beginner",
-    "title": "Crear contenido para blog técnico"
-  },
-  {
-    "estimated_time": 25,
-    "dead_line": "2025-02-28",
-    "department": "Operaciones IT",
-    "difficulty": "proficient",
-    "title": "Automatizar aprovisionamiento de workstations con Ansible"
-  },
-  {
-    "estimated_time": 2,
-    "dead_line": "2024-10-07",
-    "department": "Legal",
-    "difficulty": "novice",
-    "title": "Organizar archivo de contratos digitales"
-  },
-  {
-    "estimated_time": 4,
-    "dead_line": "2024-10-18",
-    "department": "Ventas",
-    "difficulty": "beginner",
-    "title": "Entrenar equipo en nuevo CRM"
-  },
-  {
-    "estimated_time": 18,
-    "dead_line": "2024-11-30",
-    "department": "Inteligencia Artificial",
-    "difficulty": "competent",
-    "title": "Entrenar modelo de NLP para clasificación de tickets"
-  },
-  {
-    "estimated_time": 10,
-    "dead_line": "2024-11-30",
-    "department": "Diseño de UX/UI",
-    "difficulty": "proficient",
-    "title": "Conducir investigación de usuario para rediseño"
-  },
-  {
-    "estimated_time": 5,
-    "dead_line": "2024-10-07",
-    "department": "Cloud Computing",
-    "difficulty": "beginner",
-    "title": "Monitorear costos mensuales de AWS"
-  },
-  {
-    "estimated_time": 3,
-    "dead_line": "2024-10-04",
-    "department": "QA & Testing",
-    "difficulty": "novice",
-    "title": "Validar correcciones de UI en staging"
-  },
-  {
-    "estimated_time": 7,
-    "dead_line": "2024-11-30",
-    "department": "Recursos Humanos",
-    "difficulty": "competent",
-    "title": "Analizar resultados de encuesta de clima laboral"
-  },
-  {
-    "estimated_time": 14,
-    "dead_line": "2024-12-31",
-    "department": "Marketing Digital",
-    "difficulty": "beginner",
-    "title": "Optimizar campañas de Google Ads por región"
-  },
-  {
-    "estimated_time": 1,
-    "dead_line": "2024-10-07",
-    "department": "Legal",
-    "difficulty": "novice",
-    "title": "Digitalizar documentos legales antiguos"
-  },
-  {
-    "estimated_time": 6,
-    "dead_line": "2024-10-18",
-    "department": "Ventas",
-    "difficulty": "beginner",
-    "title": "Crear presentación para potencial cliente"
-  },
-  {
-    "estimated_time": 11,
-    "dead_line": "2024-11-30",
-    "department": "Diseño de UX/UI",
-    "difficulty": "proficient",
-    "title": "Diseñar sistema de iconografía unificado"
-  },
-  {
-    "estimated_time": 8,
-    "dead_line": "2024-11-30",
-    "department": "Cloud Computing",
-    "difficulty": "beginner",
-    "title": "Configurar alerts de presupuesto en GCP"
-  },
-  {
-    "estimated_time": 2,
-    "dead_line": "2024-10-07",
-    "department": "QA & Testing",
-    "difficulty": "novice",
-    "title": "Probar compatibilidad con nuevos navegadores"
-  },
-  {
-    "estimated_time": 9,
-    "dead_line": "2024-12-31",
-    "department": "Recursos Humanos",
-    "difficulty": "competent",
-    "title": "Implementar programa de mentorship"
-  },
-  {
-    "estimated_time": 4,
-    "dead_line": "2024-10-18",
-    "department": "Legal",
-    "difficulty": "beginner",
-    "title": "Revisar NDAs con proveedores"
-  }
+	{
+		"estimated_time": 10,
+		"dead_line": "2025-05-16",
+		"department": "Ingeniería de Software",
+		"difficulty": "beginner",
+		"title": "Implementar API REST para módulo de autenticación"
+	},
+	{
+		"estimated_time": 25,
+		"dead_line": "2025-02-28",
+		"department": "Inteligencia Artificial",
+		"difficulty": "expert",
+		"title": "Optimizar modelo de recomendación para reducir latencia en 30%"
+	},
+	{
+		"estimated_time": 2,
+		"dead_line": "2024-10-04",
+		"department": "Recursos Humanos",
+		"difficulty": "novice",
+		"title": "Actualizar base de datos de candidatos en Workday"
+	},
+	{
+		"estimated_time": 40,
+		"dead_line": "2025-06-30",
+		"department": "Cloud Computing",
+		"difficulty": "proficient",
+		"title": "Migrar base de datos on-premise a AWS Aurora"
+	},
+	{
+		"estimated_time": 15,
+		"dead_line": "2024-11-30",
+		"department": "Seguridad Informática",
+		"difficulty": "competent",
+		"title": "Auditar permisos de acceso IAM en la nube"
+	},
+	{
+		"estimated_time": 5,
+		"dead_line": "2024-10-10",
+		"department": "Diseño de UX/UI",
+		"difficulty": "beginner",
+		"title": "Crear prototipo en Figma para nueva página de checkout"
+	},
+	{
+		"estimated_time": 8,
+		"dead_line": "2024-11-30",
+		"department": "Marketing Digital",
+		"difficulty": "competent",
+		"title": "Lanzar campaña en redes sociales para nuevo producto"
+	},
+	{
+		"estimated_time": 30,
+		"dead_line": "2025-05-01",
+		"department": "Operaciones IT",
+		"difficulty": "proficient",
+		"title": "Implementar sistema de monitorización centralizado (Prometheus/Grafana)"
+	},
+	{
+		"estimated_time": 3,
+		"dead_line": "2024-10-18",
+		"department": "Legal",
+		"difficulty": "novice",
+		"title": "Revisar cláusulas de privacidad en contratos estándar"
+	},
+	{
+		"estimated_time": 12,
+		"dead_line": "2024-12-31",
+		"department": "QA & Testing",
+		"difficulty": "beginner",
+		"title": "Automatizar pruebas de regresión para versión móvil"
+	},
+	{
+		"estimated_time": 20,
+		"dead_line": "2025-05-01",
+		"department": "Product Management",
+		"difficulty": "proficient",
+		"title": "Definir roadmap de producto para el próximo año fiscal"
+	},
+	{
+		"estimated_time": 1,
+		"dead_line": "2024-10-07",
+		"department": "Ventas",
+		"difficulty": "novice",
+		"title": "Actualizar listado de leads en Salesforce"
+	},
+	{
+		"estimated_time": 6,
+		"dead_line": "2024-11-30",
+		"department": "Cloud Computing",
+		"difficulty": "competent",
+		"title": "Configurar autoescalado para instancias EC2"
+	},
+	{
+		"estimated_time": 4,
+		"dead_line": "2024-10-18",
+		"department": "Diseño de UX/UI",
+		"difficulty": "beginner",
+		"title": "Realizar test A/B en botón de llamada a acción"
+	},
+	{
+		"estimated_time": 35,
+		"dead_line": "2025-06-30",
+		"department": "Ingeniería de Software",
+		"difficulty": "proficient",
+		"title": "Implementar sistema de caché distribuido (Redis)"
+	},
+	{
+		"estimated_time": 7,
+		"dead_line": "2024-11-30",
+		"department": "Seguridad Informática",
+		"difficulty": "competent",
+		"title": "Rotar claves de cifrado en bases de datos"
+	},
+	{
+		"estimated_time": 18,
+		"dead_line": "2025-02-28",
+		"department": "Recursos Humanos",
+		"difficulty": "proficient",
+		"title": "Diseñar programa de liderazgo para gerentes"
+	},
+	{
+		"estimated_time": 2,
+		"dead_line": "2024-10-07",
+		"department": "QA & Testing",
+		"difficulty": "novice",
+		"title": "Ejecutar suite de pruebas manuales para patch crítico"
+	},
+	{
+		"estimated_time": 9,
+		"dead_line": "2024-12-31",
+		"department": "Marketing Digital",
+		"difficulty": "competent",
+		"title": "Analizar métricas de conversión y optimizar embudos"
+	},
+	{
+		"estimated_time": 22,
+		"dead_line": "2025-05-01",
+		"department": "Product Management",
+		"difficulty": "proficient",
+		"title": "Priorizar features para próximo lanzamiento usando RICE"
+	},
+	{
+		"estimated_time": 5,
+		"dead_line": "2024-10-18",
+		"department": "Legal",
+		"difficulty": "beginner",
+		"title": "Documentar procesos de cumplimiento GDPR"
+	},
+	{
+		"estimated_time": 3,
+		"dead_line": "2024-10-07",
+		"department": "Ventas",
+		"difficulty": "novice",
+		"title": "Preparar kits de bienvenida para nuevos clientes"
+	},
+	{
+		"estimated_time": 15,
+		"dead_line": "2024-11-30",
+		"department": "Diseño de UX/UI",
+		"difficulty": "competent",
+		"title": "Rediseñar sistema de diseño para coherencia en productos"
+	},
+	{
+		"estimated_time": 8,
+		"dead_line": "2024-11-30",
+		"department": "Cloud Computing",
+		"difficulty": "beginner",
+		"title": "Configurar backups automatizados para RDS"
+	},
+	{
+		"estimated_time": 30,
+		"dead_line": "2025-05-01",
+		"department": "Ingeniería de Software",
+		"difficulty": "proficient",
+		"title": "Integrar sistema de logging unificado (ELK Stack)"
+	},
+	{
+		"estimated_time": 1,
+		"dead_line": "2024-10-04",
+		"department": "QA & Testing",
+		"difficulty": "novice",
+		"title": "Verificar fixes para bugs menores"
+	},
+	{
+		"estimated_time": 12,
+		"dead_line": "2024-12-31",
+		"department": "Recursos Humanos",
+		"difficulty": "competent",
+		"title": "Implementar programa de bienestar laboral"
+	},
+	{
+		"estimated_time": 6,
+		"dead_line": "2024-10-18",
+		"department": "Marketing Digital",
+		"difficulty": "beginner",
+		"title": "Crear contenido para blog técnico"
+	},
+	{
+		"estimated_time": 25,
+		"dead_line": "2025-02-28",
+		"department": "Operaciones IT",
+		"difficulty": "proficient",
+		"title": "Automatizar aprovisionamiento de workstations con Ansible"
+	},
+	{
+		"estimated_time": 2,
+		"dead_line": "2024-10-07",
+		"department": "Legal",
+		"difficulty": "novice",
+		"title": "Organizar archivo de contratos digitales"
+	},
+	{
+		"estimated_time": 4,
+		"dead_line": "2024-10-18",
+		"department": "Ventas",
+		"difficulty": "beginner",
+		"title": "Entrenar equipo en nuevo CRM"
+	},
+	{
+		"estimated_time": 18,
+		"dead_line": "2024-11-30",
+		"department": "Inteligencia Artificial",
+		"difficulty": "competent",
+		"title": "Entrenar modelo de NLP para clasificación de tickets"
+	},
+	{
+		"estimated_time": 10,
+		"dead_line": "2024-11-30",
+		"department": "Diseño de UX/UI",
+		"difficulty": "proficient",
+		"title": "Conducir investigación de usuario para rediseño"
+	},
+	{
+		"estimated_time": 5,
+		"dead_line": "2024-10-07",
+		"department": "Cloud Computing",
+		"difficulty": "beginner",
+		"title": "Monitorear costos mensuales de AWS"
+	},
+	{
+		"estimated_time": 3,
+		"dead_line": "2024-10-04",
+		"department": "QA & Testing",
+		"difficulty": "novice",
+		"title": "Validar correcciones de UI en staging"
+	},
+	{
+		"estimated_time": 7,
+		"dead_line": "2024-11-30",
+		"department": "Recursos Humanos",
+		"difficulty": "competent",
+		"title": "Analizar resultados de encuesta de clima laboral"
+	},
+	{
+		"estimated_time": 14,
+		"dead_line": "2024-12-31",
+		"department": "Marketing Digital",
+		"difficulty": "beginner",
+		"title": "Optimizar campañas de Google Ads por región"
+	},
+	{
+		"estimated_time": 1,
+		"dead_line": "2024-10-07",
+		"department": "Legal",
+		"difficulty": "novice",
+		"title": "Digitalizar documentos legales antiguos"
+	},
+	{
+		"estimated_time": 6,
+		"dead_line": "2024-10-18",
+		"department": "Ventas",
+		"difficulty": "beginner",
+		"title": "Crear presentación para potencial cliente"
+	},
+	{
+		"estimated_time": 11,
+		"dead_line": "2024-11-30",
+		"department": "Diseño de UX/UI",
+		"difficulty": "proficient",
+		"title": "Diseñar sistema de iconografía unificado"
+	},
+	{
+		"estimated_time": 8,
+		"dead_line": "2024-11-30",
+		"department": "Cloud Computing",
+		"difficulty": "beginner",
+		"title": "Configurar alerts de presupuesto en GCP"
+	},
+	{
+		"estimated_time": 2,
+		"dead_line": "2024-10-07",
+		"department": "QA & Testing",
+		"difficulty": "novice",
+		"title": "Probar compatibilidad con nuevos navegadores"
+	},
+	{
+		"estimated_time": 9,
+		"dead_line": "2024-12-31",
+		"department": "Recursos Humanos",
+		"difficulty": "competent",
+		"title": "Implementar programa de mentorship"
+	},
+	{
+		"estimated_time": 4,
+		"dead_line": "2024-10-18",
+		"department": "Legal",
+		"difficulty": "beginner",
+		"title": "Revisar NDAs con proveedores"
+	}
 ]

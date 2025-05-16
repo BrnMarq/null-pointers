@@ -1,4 +1,4 @@
-CXX         = clang++ -std=c++20
+CXX         = g++ -std=c++20
 WARN        = -Wall -Wextra -Wcast-align -Wno-sign-compare -Wno-write-strings \
               -Wno-parentheses -Wfloat-equal -pedantic
 FLAGS       = -DDEBUG -g -O0

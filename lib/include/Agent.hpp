@@ -31,6 +31,8 @@ public:
 
   bool is_available();
 
+  bool operator==(const Agent &a) const noexcept;
+
 private:
   // * Logic Info
   std::chrono::hours available_time;

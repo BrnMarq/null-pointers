@@ -49,6 +49,8 @@ public:
   using ATArcVectorT = std::vector<Arc<Agent, Task, Weight, Capacity>>;
   using MatchT = std::unordered_map<Agent, TaskVectorT, Agent::Hash>;
 
+  Matcher(AgentVectorT _agents, TaskVectorT _tasks);
+
   const AgentVectorT &get_agents() const noexcept;
 
   const TaskVectorT &get_tasks() const noexcept;

@@ -4,11 +4,9 @@
 #include <chrono>
 
 #include "json.hpp"
-#include <Agent.hpp>
-#include <Task.hpp>
+#include <Matcher.hpp>
 #include <Definitions.hpp>
 #include <Exception.hpp>
-#include <IOUtils.hpp>
 
 using json = nlohmann::json;
 
@@ -25,6 +23,8 @@ std::chrono::sys_days string_to_date(const std::string &date)
 
 int main(int argc, char *argv[])
 {
+  std::filesystem::path pwd = std::filesystem::current_path();
+
   if (argc > 1)
   {
     std::string arg(argv[1]);
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     if (arg == "np")
     {
-      std::filesystem::path path = "../../.np";
+      std::filesystem::path path = pwd / ".np";
 
       if (!std::filesystem::exists(path))
       {
@@ -45,8 +45,8 @@ int main(int argc, char *argv[])
     }
   }
 
-  std::ifstream file_agents("../../.np/agents.json");
-  std::ifstream file_task("../../.np/tasks.json");
+  std::ifstream file_agents(pwd / ".np/agents.json");
+  std::ifstream file_task(pwd / ".np/tasks.json");
 
   json agents = json::parse(file_agents);
   json tasks = json::parse(file_task);
@@ -69,20 +69,9 @@ int main(int argc, char *argv[])
 
     Agent agent(_available_time, _deparment, _level, _name);
 
-    std::cout << &agent << std::endl;
-
     agents_list.push_back(agent);
+    break;
   }
-
-  //  std::chrono::hours estimated_time;
-  // std::chrono::sys_days dead_line;
-  // // TODO how to get deparment to be enum
-  // std::string department;
-  // level difficulty;
-
-  // // * Extra info
-  // std::string title;
-  // std::string requirements;
 
   for (const auto &tsk : tasks)
   {
@@ -96,37 +85,12 @@ int main(int argc, char *argv[])
 
     Task task(_estimated_time, _dead_line, _deparment, _difficulty, _title, "");
 
-    std::cout << &task << std::endl;
     task_list.push_back(task);
+    break;
   };
 
-  // std::cout << agents_list.size() << std::endl;
-  //  std::cout << task_list.size() << std::endl;
-  std::cout << Departments::departments << std::endl;
-
-  std::chrono::sys_days now{floor<std::chrono::days>(std::chrono::system_clock::now())};
-
-  // std::chrono::year_month_day ymd{std::chrono::floor<std::chrono::days>(now)};
-  std::chrono::hours estimated_time{12};
-  std::cout << now << std::endl;
-  auto later = now + estimated_time;
-  std::cout << later << std::endl;
-
-  std::chrono::sys_days tomorrow{std::chrono::year(2025) / std::chrono::month(5) / std::chrono::day(14)};
-  std::cout << tomorrow << std::endl;
-
-  std::cout << std::chrono::duration_cast<std::chrono::hours>(tomorrow - later).count() << std::endl;
-
-  // // ymd = ymd + std::chrono::months(4);
-
-  // // ymd = ymd - std::chrono::years(10);
-  // std::cout << "Current Year: " << static_cast<int>(ymd.year()) << ", "
-  //                                                                  "Month: "
-  //           << static_cast<unsigned>(ymd.month()) << ", "
-  //                                                    "Day: "
-  //           << static_cast<unsigned>(ymd.day()) << "\n"
-  //                                                  "ymd: "
-  //           << ymd << '\n';
+  Matcher matcher(agents_list, task_list);
+  matcher.create_match();
 
   return EXIT_SUCCESS;
 }
