@@ -14,7 +14,7 @@ public:
 
   struct Hash
   {
-    size_t operator()(const Agent &v) const noexcept;
+    size_t operator()(const Agent &a) const noexcept;
   };
 
   const std::chrono::hours &get_available_time() const noexcept;
