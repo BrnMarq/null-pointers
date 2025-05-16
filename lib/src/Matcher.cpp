@@ -45,5 +45,7 @@ void Matcher::create_arcs() noexcept
 Matcher::MatchT Matcher::create_match() noexcept
 {
     create_arcs();
+    std::unordered_map<Agent, size_t, Agent::Hash> source;
+    std::unordered_map<Task, size_t, Task::Hash> sink;
     return MatchT();
 }

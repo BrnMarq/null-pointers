@@ -18,7 +18,7 @@ void hash_combine(size_t &seed, const T &val, const Ts &...args)
   hash_combine(seed, args...);
 }
 
-void hash_combine(size_t &seed) {};
+void hash_combine(size_t &seed);
 
 template <typename... Ts>
 size_t hash_val(const Ts &...args)

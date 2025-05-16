@@ -5,7 +5,6 @@
 #include <unordered_map>
 
 #include "Agent.hpp"
-#include "Task.hpp"
 #include "Arc.hpp"
 
 class Weight
