@@ -70,7 +70,6 @@ int main(int argc, char *argv[])
     Agent agent(_available_time, _deparment, _level, _name);
 
     agents_list.push_back(agent);
-    break;
   }
 
   for (const auto &tsk : tasks)
@@ -86,7 +85,6 @@ int main(int argc, char *argv[])
     Task task(_estimated_time, _dead_line, _deparment, _difficulty, _title, "");
 
     task_list.push_back(task);
-    break;
   };
 
   Matcher matcher(agents_list, task_list);

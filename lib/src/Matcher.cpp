@@ -18,19 +18,32 @@ const Matcher::ATArcVectorT &Matcher::get_arcs() const noexcept
     return arcs;
 }
 
-Matcher::MatchT Matcher::create_match() noexcept
+void Matcher::create_arcs() noexcept
 {
-    MatchT match;
-    ATArcVectorT arcs;
     for (const Agent &agent : agents)
     {
         for (const Task &task : tasks)
         {
+            if (agent.get_department() != task.get_department() &&
+                agent.get_available_time() < task.get_estimated_time())
+            {
+                continue;
+            }
             ATArcVectorT::value_type arc(agent, task);
             arcs.push_back(arc);
-            std::cout << arc << std::endl;
-            match[agent].push_back(task);
         }
     }
+    std::sort(
+        arcs.begin(),
+        arcs.end(),
+        [](const ATArcVectorT::value_type &arc1, const ATArcVectorT::value_type &arc2)
+        {
+            return arc1.get_weigth() < arc2.get_weigth();
+        });
+}
+
+Matcher::MatchT Matcher::create_match() noexcept
+{
+    create_arcs();
     return MatchT();
 }

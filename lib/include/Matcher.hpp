@@ -57,7 +57,8 @@ public:
 
   const ATArcVectorT &get_arcs() const noexcept;
 
-  // Todo
+  void create_arcs() noexcept;
+
   MatchT create_match() noexcept;
 
   void print_match(MatchT match) const noexcept;
