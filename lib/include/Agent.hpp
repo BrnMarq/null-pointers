@@ -36,7 +36,6 @@ public:
 private:
   // * Logic Info
   std::chrono::hours available_time;
-  // TODO how to get deparment to be enum
   std::string department;
   level expertise;
   // * Extra info

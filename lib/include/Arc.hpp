@@ -52,6 +52,8 @@ public:
 
   const size_t &get_flow() const noexcept;
 
+  const size_t get_remaining_capacity() const noexcept;
+
   void push_flow(size_t &_flow) noexcept;
 
 private:
@@ -105,6 +107,12 @@ template <class From, class To, class Weight, class Capacity>
 const size_t &Arc<From, To, Weight, Capacity>::get_flow() const noexcept
 {
   return flow;
+}
+
+template <class From, class To, class Weight, class Capacity>
+inline const size_t Arc<From, To, Weight, Capacity>::get_remaining_capacity() const noexcept
+{
+  return capacity - flow;
 }
 
 template <class From, class To, class Weight, class Capacity>

@@ -88,7 +88,8 @@ int main(int argc, char *argv[])
   };
 
   Matcher matcher(agents_list, task_list);
-  matcher.create_match();
+  Matcher::MatchT match = matcher.create_match();
+  matcher.print_match(match);
 
   return EXIT_SUCCESS;
 }

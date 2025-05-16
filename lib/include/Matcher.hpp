@@ -58,6 +58,10 @@ public:
 
   void create_arcs() noexcept;
 
+  bool agents_matched(std::unordered_map<Agent, size_t, Agent::Hash> agents_flow) const noexcept;
+
+  bool tasks_matched(std::unordered_map<Task, size_t, Task::Hash> tasks_flow) const noexcept;
+
   MatchT create_match() noexcept;
 
   void print_match(MatchT match) const noexcept;
