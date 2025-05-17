@@ -29,6 +29,8 @@ public:
 
   void assign_task(Task &_task);
 
+  void assign_task(std::vector<Task> &tasks);
+
   bool is_available();
 
   bool operator==(const Agent &a) const noexcept;

@@ -39,6 +39,14 @@ void Agent::assign_task(Task &_task)
     assigned_tasks.push_back(_task);
 }
 
+void Agent::assign_task(std::vector<Task> &tasks)
+{
+    for (Task &task : tasks)
+    {
+        assign_task(task);
+    }
+}
+
 bool Agent::is_available()
 {
     return available_time > std::chrono::hours(0);
