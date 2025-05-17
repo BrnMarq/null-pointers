@@ -31,12 +31,15 @@ int main(int argc, char *argv[])
         std::filesystem::create_directory(path);
       }
     }
-  }
 
-  Parser parser{};
-  Matcher matcher(parser.get_agents(), parser.get_tasks());
-  Matcher::MatchT match = matcher.create_match();
-  matcher.print_match(match);
+    if (arg == "match")
+    {
+      Parser parser{};
+      Matcher matcher(parser.get_agents(), parser.get_tasks());
+      Matcher::MatchT match = matcher.create_match();
+      matcher.print_match(match);
+    }
+  }
 
   return EXIT_SUCCESS;
 }
