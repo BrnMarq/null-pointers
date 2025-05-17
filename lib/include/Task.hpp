@@ -33,7 +33,6 @@ private:
   // * Logic info
   std::chrono::hours estimated_time;
   std::chrono::sys_days dead_line;
-  // TODO how to get deparment to be enum
   std::string department;
   level difficulty;
 
