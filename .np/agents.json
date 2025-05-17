@@ -1,32 +1,26 @@
 [
 	{
-		"available_time": 40,
-		"department": "Engineering",
-		"expertise": "proficient",
-		"name": "John Smith"
-	},
-	{
-		"available_time": 25,
-		"department": "Design",
-		"expertise": "beginner",
-		"name": "Alice Johnson"
-	},
-	{
-		"available_time": 60,
-		"department": "Engineering",
-		"expertise": "expert",
-		"name": "Robert Chen"
-	},
-	{
-		"available_time": 35,
-		"department": "Design",
-		"expertise": "competent",
-		"name": "Emma Wilson"
-	},
-	{
-		"available_time": 20,
-		"department": "Engineering",
+		"available_time":0,
+		"department": "Frontend",
 		"expertise": "novice",
-		"name": "Michael Brown"
+		"name": "Juan Lopez"
+	},
+	{
+		"available_time":3,
+		"department": "Backend",
+		"expertise": "competent",
+		"name": "Maria Perez"
+	},
+	{
+		"available_time": 8,
+		"department": "Backend",
+		"expertise": "novice",
+		"name": "Celeste Castillo"
+	},
+	{
+		"available_time": 5,
+		"department": "Frontend",
+		"expertise": "expert",
+		"name": "Valeska Perez"
 	}
 ]

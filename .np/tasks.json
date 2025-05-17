@@ -1,42 +1,82 @@
 [
 	{
-		"estimated_time": 20,
-		"dead_line": "2025-06-15",
-		"department": "Engineering",
-		"difficulty": "proficient",
-		"title": "Refactor legacy codebase",
-		"requirements": "C++17, CMake, Unit Testing"
+		"estimated_time": 3,
+		"dead_line": "2025-05-17",
+		"department": "Frontend",
+		"difficulty": "novice",
+		"title": "Hacer paleta de colores",
+		"requirements": "Diseno"
 	},
 	{
-		"estimated_time": 40,
-		"dead_line": "2025-07-30",
-		"department": "Design",
-		"difficulty": "beginner",
-		"title": "UI/UX overhaul",
-		"requirements": "Figma, User research basics"
+		"estimated_time": 3,
+		"dead_line": "2025-05-17",
+		"department": "Backend",
+		"difficulty": "novice",
+		"title": "Desarrollo de funcion",
+		"requirements": "C++"
 	},
 	{
-		"estimated_time": 60,
-		"dead_line": "2025-09-28",
-		"department": "Engineering",
+		"estimated_time": 4,
+		"dead_line": "2025-05-18",
+		"department": "Marketing",
 		"difficulty": "expert",
-		"title": "Optimize database queries",
-		"requirements": "SQL, Query profiling, Indexing"
+		"title": "Idea campana publicitaria",
+		"requirements": "Carrera de Diseno"
 	},
 	{
-		"estimated_time": 15,
-		"dead_line": "2025-08-10",
-		"department": "Design",
-		"difficulty": "competent",
-		"title": "Create style guide",
+		"estimated_time": 2,
+		"dead_line": "2025-05-20",
+		"department": "Frontend",
+		"difficulty": "novice",
+		"title": "Mover botones de posicion",
 		"requirements": "Color theory, Typography"
 	},
 	{
-		"estimated_time": 20,
-		"dead_line": "2025-10-15",
-		"department": "Engineering",
+		"estimated_time": 3,
+		"dead_line": "2025-05-18",
+		"department": "Frontend",
+		"difficulty": "competent",
+		"title": "Desarrollo pestana",
+		"requirements": "Carrera de Diseno"
+	},
+	{
+		"estimated_time": 1,
+		"dead_line": "2025-05-17",
+		"department": "Frontend",
+		"difficulty": "expert",
+		"title": "Bug Fix pestana",
+		"requirements": "Carrera de Diseno"
+	},
+	{
+		"estimated_time": 1,
+		"dead_line": "2025-05-17",
+		"department": "Backend",
 		"difficulty": "novice",
-		"title": "Document API endpoints",
-		"requirements": "Markdown, Swagger basics"
+		"title": "Crear estructura proyecto",
+		"requirements": "C++"
+	},
+	{
+		"estimated_time": 3,
+		"dead_line": "2025-05-19",
+		"department": "Backend",
+		"difficulty": "expert",
+		"title": "Server Fixes",
+		"requirements": "C++"
+	},
+	{
+		"estimated_time": 1,
+		"dead_line": "2025-05-18",
+		"department": "Backend",
+		"difficulty": "beginner",
+		"title": "Bug Fix funcion",
+		"requirements": "C++"
+	},
+	{
+		"estimated_time": 2,
+		"dead_line": "2025-05-21",
+		"department": "Backend",
+		"difficulty": "proficient",
+		"title": "Sql query revision",
+		"requirements": "C++, SQLServer"
 	}
 ]
