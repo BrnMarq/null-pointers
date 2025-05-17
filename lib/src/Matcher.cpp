@@ -24,8 +24,7 @@ void Matcher::create_arcs() noexcept
     {
         for (const Task &task : tasks)
         {
-            if (agent.get_department() != task.get_department() &&
-                agent.get_available_time() < task.get_estimated_time())
+            if (agent.get_department() != task.get_department() || agent.get_available_time() < task.get_estimated_time())
             {
                 continue;
             }
@@ -92,6 +91,11 @@ Matcher::MatchT Matcher::create_match() noexcept
             {agent.get_available_time().count() - source[agent],
              task.get_estimated_time().count() - sink[task],
              arc.get_remaining_capacity()});
+
+        if (max_flow_push == 0)
+        {
+            continue;
+        }
         source[agent] += max_flow_push;
         arc.push_flow(max_flow_push);
         sink[task] += max_flow_push;

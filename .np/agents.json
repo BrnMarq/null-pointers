@@ -1,182 +1,32 @@
 [
-  {
-    "available_time": 2,
-    "department": "Ingenieria de Software",
-    "expertise": "expert",
-    "name": "Laura Diaz Sanchez"
-  },
-  {
-    "available_time": 6,
-    "department": "Ingenieria de Software",
-    "expertise": "proficient",
-    "name": "Andres Rivera Lopez"
-  },
-  {
-    "available_time": 0,
-    "department": "Inteligencia Artificial",
-    "expertise": "novice",
-    "name": "Marta Chen Wu"
-  },
-  {
-    "available_time": 8,
-    "department": "Inteligencia Artificial",
-    "expertise": "expert",
-    "name": "Oscar Vega Molina"
-  },
-  {
-    "available_time": 4,
-    "department": "Cloud Computing",
-    "expertise": "competent",
-    "name": "Eduardo Silva Castro"
-  },
-  {
-    "available_time": 3,
-    "department": "Cloud Computing",
-    "expertise": "beginner",
-    "name": "Patricia Rojas Gonzalez"
-  },
-  {
-    "available_time": 7,
-    "department": "Seguridad Informatica",
-    "expertise": "expert",
-    "name": "Javier Mendez Ortiz"
-  },
-  {
-    "available_time": 1,
-    "department": "Seguridad Informatica",
-    "expertise": "proficient",
-    "name": "Carmen Ruiz Navarro"
-  },
-  {
-    "available_time": 5,
-    "department": "Diseno de UX/UI",
-    "expertise": "competent",
-    "name": "Diego Herrera Jimenez"
-  },
-  {
-    "available_time": 2,
-    "department": "Diseno de UX/UI",
-    "expertise": "beginner",
-    "name": "Sara Wong Martinez"
-  },
-  {
-    "available_time": 8,
-    "department": "Ventas y Publicidad",
-    "expertise": "proficient",
-    "name": "Roberto Soto Diaz"
-  },
-  {
-    "available_time": 0,
-    "department": "Ventas y Publicidad",
-    "expertise": "novice",
-    "name": "Natalia Castro Rios"
-  },
-  {
-    "available_time": 6,
-    "department": "Marketing Digital",
-    "expertise": "expert",
-    "name": "Hector Morales Vega"
-  },
-  {
-    "available_time": 3,
-    "department": "Marketing Digital",
-    "expertise": "beginner",
-    "name": "Adriana Guzman Flores"
-  },
-  {
-    "available_time": 4,
-    "department": "Google X",
-    "expertise": "competent",
-    "name": "Raul Navarro Mendoza"
-  },
-  {
-    "available_time": 7,
-    "department": "Google X",
-    "expertise": "expert",
-    "name": "Isabela Ortega Paredes"
-  },
-  {
-    "available_time": 1,
-    "department": "Recursos Humanos",
-    "expertise": "proficient",
-    "name": "Luis Ramirez Soto"
-  },
-  {
-    "available_time": 5,
-    "department": "Recursos Humanos",
-    "expertise": "beginner",
-    "name": "Daniela Fuentes Leon"
-  },
-  {
-    "available_time": 2,
-    "department": "Operaciones Globales",
-    "expertise": "competent",
-    "name": "Manuel Espinoza Rojas"
-  },
-  {
-    "available_time": 8,
-    "department": "Operaciones Globales",
-    "expertise": "expert",
-    "name": "Valentina Mendoza Castro"
-  },
-  {
-    "available_time": 0,
-    "department": "Soporte Tecnico",
-    "expertise": "novice",
-    "name": "Ricardo Pena Herrera"
-  },
-  {
-    "available_time": 6,
-    "department": "Soporte Tecnico",
-    "expertise": "proficient",
-    "name": "Gabriela Torres Silva"
-  },
-  {
-    "available_time": 3,
-    "department": "Finanzas Corporativas",
-    "expertise": "beginner",
-    "name": "Felipe Gonzalez Mora"
-  },
-  {
-    "available_time": 7,
-    "department": "Finanzas Corporativas",
-    "expertise": "expert",
-    "name": "Mariana Rios Navarro"
-  },
-  {
-    "available_time": 4,
-    "department": "Investigacion (R&D)",
-    "expertise": "competent",
-    "name": "Alejandro Castro Diaz"
-  },
-  {
-    "available_time": 1,
-    "department": "Investigacion (R&D)",
-    "expertise": "proficient",
-    "name": "Camila Vega Soto"
-  },
-  {
-    "available_time": 5,
-    "department": "Legal y Cumplimiento",
-    "expertise": "beginner",
-    "name": "Jose Lopez Mendoza"
-  },
-  {
-    "available_time": 2,
-    "department": "Legal y Cumplimiento",
-    "expertise": "expert",
-    "name": "Lucia Herrera Fuentes"
-  },
-  {
-    "available_time": 8,
-    "department": "Control de Calidad (QA)",
-    "expertise": "competent",
-    "name": "Santiago Rivera Castro"
-  },
-  {
-    "available_time": 0,
-    "department": "Control de Calidad (QA)",
-    "expertise": "novice",
-    "name": "Fernanda Ortiz Rojas"
-  }
+	{
+		"available_time": 40,
+		"department": "Engineering",
+		"expertise": "proficient",
+		"name": "John Smith"
+	},
+	{
+		"available_time": 25,
+		"department": "Design",
+		"expertise": "beginner",
+		"name": "Alice Johnson"
+	},
+	{
+		"available_time": 60,
+		"department": "Engineering",
+		"expertise": "expert",
+		"name": "Robert Chen"
+	},
+	{
+		"available_time": 35,
+		"department": "Design",
+		"expertise": "competent",
+		"name": "Emma Wilson"
+	},
+	{
+		"available_time": 20,
+		"department": "Engineering",
+		"expertise": "novice",
+		"name": "Michael Brown"
+	}
 ]
