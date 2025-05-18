@@ -25,27 +25,36 @@ int main(int argc, char *argv[])
 
     if (arg == "np")
     {
-      std::filesystem::path path = pwd / ".np";
-
-      if (!std::filesystem::exists(path))
-      {
-        std::filesystem::create_directory(path);
-      }
+      Parser parser{};
+      parser.verify_create_np();
     }
 
     else if (arg == "agents")
     {
-      Parser p;
-      auto agents = p.get_agents();
+      Parser parser{};
+      auto agents = parser.get_agents();
 
       print_agents(agents);
     }
 
+    else if (arg == "add_agent")
+    {
+      Parser parser{};
+      Agent a{std::chrono::hours(7), "Dep", level::competent, "Maria"};
+      parser.add_agent(a);
+    }
+
+    else if (arg == "add_task")
+    {
+      Parser parser{};
+      Task t{std::chrono::hours(9), std::chrono::sys_days(), "Depar", level::beginner, "Titulo", "nada"};
+      parser.add_task(t);
+    }
+
     else if (arg == "tasks")
     {
-      Parser p;
-      auto tasks = p.get_tasks();
-
+      Parser parser{};
+      auto tasks = parser.get_tasks();
       print_tasks(tasks);
     }
 

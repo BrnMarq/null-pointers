@@ -14,13 +14,15 @@ public:
 
   std::chrono::sys_days string_to_date(const std::string &date) const noexcept;
 
+  std::string date_to_string(const std::chrono::sys_days &date) const noexcept;
+
   std::vector<Agent> get_agents() const;
 
   std::vector<Task> get_tasks() const;
 
-  // TODO
   void add_agent(const Agent &agent) const;
 
-  // TODO
   void add_task(const Task &task) const;
+
+  void verify_create_np() const;
 };

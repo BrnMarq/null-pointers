@@ -91,6 +91,13 @@ void print_match(Matcher::MatchT match)
 
 void print_agents(std::vector<Agent> agents)
 {
+    if (agents.empty())
+    {
+        std::cout << "No agents to show!" << std::endl;
+        std::cout << "Add some using 'add_agent' command" << std::endl;
+        return;
+    }
+
     for (auto &a : agents)
     {
         std::cout << a << std::endl;
@@ -103,6 +110,13 @@ void print_agents(std::vector<Agent> agents)
 
 void print_tasks(std::vector<Task> tasks)
 {
+    if (tasks.empty())
+    {
+        std::cout << "No tasks to show!" << std::endl;
+        std::cout << "Add some using 'add_task' command" << std::endl;
+        return;
+    }
+
     for (auto &t : tasks)
     {
         std::cout << t << std::endl;
