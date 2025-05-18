@@ -8,9 +8,9 @@
 std::ostream &operator<<(std::ostream &out, const Agent &a)
 {
     out << "Name: " << a.get_name() << "\n"
-        << "Available time: " << a.get_available_time().count() << "\n"
+        << "Available time: " << a.get_available_time().count() << "h" << "\n"
         << "Departament: " << a.get_department() << "\n"
-        << "Level: " << level_to_string(a.get_expertise()) << "\n";
+        << "Level: " << level_to_string(a.get_expertise());
 
     return out;
 }
@@ -73,4 +73,38 @@ void print_container(const C &c, char ldelim, char rdelim, std::ostream &out)
     }
 
     out << rdelim;
+}
+
+void print_match(Matcher::MatchT match)
+{
+    for (const std::pair<Agent, std::vector<Task>> &m : match)
+    {
+        std::cout << m.first << std::endl;
+        std::cout << "Has been assigned the following tasks\n"
+                  << std::endl;
+        for (const Task &task : m.second)
+        {
+            std::cout << task << std::endl;
+        }
+    }
+}
+
+void print_agents(std::vector<Agent> agents)
+{
+    for (auto &a : agents)
+    {
+        std::cout << a << std::endl;
+        std::cout << "Assigned tasks: ";
+        print_container(a.get_assigned_tasks(), '[', ']', std::cout);
+        std::cout << '\n'
+                  << std::endl;
+    }
+}
+
+void print_tasks(std::vector<Task> tasks)
+{
+    for (auto &t : tasks)
+    {
+        std::cout << t << std::endl;
+    }
 }

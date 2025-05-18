@@ -5,9 +5,10 @@
 #include <chrono>
 
 #include <Matcher.hpp>
+#include <IOUtils.hpp>
+#include <Parser.hpp>
 #include <Definitions.hpp>
 #include <Exception.hpp>
-#include "Parser.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -32,12 +33,28 @@ int main(int argc, char *argv[])
       }
     }
 
-    if (arg == "match")
+    else if (arg == "agents")
+    {
+      Parser p;
+      auto agents = p.get_agents();
+
+      print_agents(agents);
+    }
+
+    else if (arg == "tasks")
+    {
+      Parser p;
+      auto tasks = p.get_tasks();
+
+      print_tasks(tasks);
+    }
+
+    else if (arg == "match")
     {
       Parser parser{};
       Matcher matcher(parser.get_agents(), parser.get_tasks());
       Matcher::MatchT match = matcher.create_match();
-      matcher.print_match(match);
+      print_match(match);
     }
   }
 
