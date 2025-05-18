@@ -16,7 +16,7 @@ bool department_exists(const std::string &deparment)
     return std::find(Departments::departments.begin(), Departments::departments.end(), deparment) != Departments::departments.end();
 }
 
-level get_level_from_string(const std::string &_level)
+level string_to_level(const std::string &_level)
 {
     std::unordered_map<std::string, level> level_map =
         {
