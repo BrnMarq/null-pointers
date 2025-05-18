@@ -64,8 +64,6 @@ public:
 
   MatchT create_match() noexcept;
 
-  void print_match(MatchT match) const noexcept;
-
 private:
   AgentVectorT agents;
   TaskVectorT tasks;

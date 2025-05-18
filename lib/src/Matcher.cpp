@@ -1,5 +1,5 @@
 #include "Matcher.hpp"
-#include "IOUtils.hpp"
+// #include "IOUtils.hpp"
 
 Matcher::Matcher(AgentVectorT _agents, TaskVectorT _tasks) : agents{_agents}, tasks{_tasks}
 {
@@ -108,17 +108,4 @@ Matcher::MatchT Matcher::create_match() noexcept
     }
 
     return result;
-}
-
-void Matcher::print_match(MatchT match) const noexcept
-{
-    for (const std::pair<Agent, std::vector<Task>> &m : match)
-    {
-        std::cout << m.first << std::endl;
-        std::cout << "Has been assigned the following tasks" << std::endl;
-        for (const Task &task : m.second)
-        {
-            std::cout << task << std::endl;
-        }
-    }
 }
