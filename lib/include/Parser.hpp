@@ -1,5 +1,6 @@
 #include <fstream>
 #include <filesystem>
+#include <cctype>
 #include "Agent.hpp"
 
 class Parser
@@ -21,6 +22,8 @@ public:
   std::vector<Task> get_tasks() const;
 
   void add_agent(const Agent &agent) const;
+
+  Agent write_agent() const;
 
   void add_task(const Task &task) const;
 

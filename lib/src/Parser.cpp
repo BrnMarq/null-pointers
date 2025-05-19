@@ -205,3 +205,51 @@ void Parser::verify_create_np() const
     }
   }
 }
+
+std::string toLower(const std::string &str)
+{
+  std::string result = str;
+  for (char &c : result)
+  {
+    c = std::tolower(c);
+  }
+  return result;
+}
+
+Agent Parser::write_agent() const
+{
+  std::string name;
+  int available_time;
+  std::string department;
+  std::string expertise;
+
+  std::cout << "Enter name: ";
+  std::getline(std::cin, name);
+
+  std::cout << "Enter available time: ";
+
+  while (!(std::cin >> available_time) || available_time < 0)
+  {
+    std::cin.clear();
+    std::cin.ignore(1000, '\n');
+    std::cout << "Enter a number greater than 0. Try again: ";
+  }
+
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::cout << "Enter departament: ";
+  std::getline(std::cin, department);
+
+  std::cout << "Enter expertise (novice, beginner, competent, proficient, expert): ";
+  std::cin >> expertise;
+
+  expertise = toLower(expertise);
+
+  if (name.size() == 0 || department.size() == 0 || !is_valid_level(expertise))
+  {
+    throw std::invalid_argument("Some of the data you provided is wrong. Try again");
+  }
+
+  Agent agent{std::chrono::hours(available_time), department, string_to_level(expertise), name};
+
+  return agent;
+}

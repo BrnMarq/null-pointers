@@ -40,8 +40,9 @@ int main(int argc, char *argv[])
     else if (arg == "add_agent")
     {
       Parser parser{};
-      Agent a{std::chrono::hours(7), "Dep", level::competent, "Maria"};
-      parser.add_agent(a);
+      Agent agent = parser.write_agent();
+      parser.add_agent(agent);
+      std::cout << "New agent added!" << std::endl;
     }
 
     else if (arg == "add_task")
