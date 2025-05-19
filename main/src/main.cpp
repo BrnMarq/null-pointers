@@ -48,8 +48,10 @@ int main(int argc, char *argv[])
     else if (arg == "add_task")
     {
       Parser parser{};
-      Task t{std::chrono::hours(9), std::chrono::sys_days(), "Depar", level::beginner, "Titulo", "nada"};
-      parser.add_task(t);
+      Task task = parser.write_task();
+      // Task t{std::chrono::hours(9), std::chrono::sys_days(), "Depar", level::beginner, "Titulo", "nada"};
+      parser.add_task(task);
+      std::cout << "New task added!" << std::endl;
     }
 
     else if (arg == "tasks")
