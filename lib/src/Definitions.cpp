@@ -3,6 +3,7 @@
 float Configs::time_gap_multiplier{1.0f};
 float Configs::difficulty_gap_multiplier{1.0f};
 std::vector<std::string> Configs::valid_program_args{"np", "add_agent", "add_task", "agents", "tasks", "match"};
+std::vector<std::string> Configs::valid_levels{"novice", "beginner", "competent", "proficient", "expert"};
 
 std::vector<std::string> Departments::departments{};
 
@@ -40,4 +41,9 @@ std::string level_to_string(const level &_level)
             {level::expert, "expert"}};
 
     return level_map.at(_level);
+}
+
+bool is_valid_level(const std::string &level)
+{
+    return std::find(Configs::valid_levels.begin(), Configs::valid_levels.end(), level) != Configs::valid_levels.end();
 }
