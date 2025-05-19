@@ -77,10 +77,16 @@ void print_container(const C &c, char ldelim, char rdelim, std::ostream &out)
 
 void print_match(Matcher::MatchT match)
 {
+    if (match.size() == 0)
+    {
+        std::cout << "There's no match to do!" << std::endl;
+        return;
+    }
+
     for (const std::pair<Agent, std::vector<Task>> &m : match)
     {
         std::cout << m.first << std::endl;
-        std::cout << "Has been assigned the following tasks\n"
+        std::cout << "\nHas been assigned the following tasks\n"
                   << std::endl;
         for (const Task &task : m.second)
         {
