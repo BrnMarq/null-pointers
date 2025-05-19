@@ -14,6 +14,13 @@ int main(int argc, char *argv[])
 {
   std::filesystem::path pwd = std::filesystem::current_path();
 
+  // std::cout << BLUE << "TEXT" << RESET << std::endl;
+  // std::cout << RED << "TEXT" << RESET << std::endl;
+  // std::cout << CYAN << "TEXT" << RESET << std::endl;
+  // std::cout << GREEN << "TEXT" << RESET << std::endl;
+  // std::cout << YELLOW << "TEXT" << RESET << std::endl;
+  // std::cout << MAGENTA << "TEXT" << RESET << std::endl;
+
   if (argc > 1)
   {
     std::string arg(argv[1]);
@@ -42,7 +49,7 @@ int main(int argc, char *argv[])
       Parser parser{};
       Agent agent = parser.write_agent();
       parser.add_agent(agent);
-      std::cout << "New agent added!" << std::endl;
+      std::cout << GREEN << "New agent added!" << RESET << std::endl;
     }
 
     else if (arg == "add_task")
@@ -51,7 +58,7 @@ int main(int argc, char *argv[])
       Task task = parser.write_task();
       // Task t{std::chrono::hours(9), std::chrono::sys_days(), "Depar", level::beginner, "Titulo", "nada"};
       parser.add_task(task);
-      std::cout << "New task added!" << std::endl;
+      std::cout << GREEN << "New task added!" << RESET << std::endl;
     }
 
     else if (arg == "tasks")
