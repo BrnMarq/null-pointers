@@ -89,7 +89,7 @@ void print_match(Matcher::MatchT match)
 {
     if (match.size() == 0)
     {
-        std::cout << YELLOW << "There's no match to do!" << RESET << std::endl;
+        std::cout << YELLOW << "There's no match to make!" << RESET << std::endl;
         return;
     }
 
