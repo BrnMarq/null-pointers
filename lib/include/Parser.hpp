@@ -2,7 +2,9 @@
 #include <filesystem>
 #include <cctype>
 #include <regex>
+
 #include "Agent.hpp"
+#include "Matcher.hpp"
 
 class Parser
 {
@@ -25,6 +27,8 @@ public:
   Task write_task() const;
 
   void add_task(const Task &task) const;
+
+  void save_match(const Matcher::MatchT &match) const;
 
   void verify_create_np() const;
 };

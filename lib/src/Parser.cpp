@@ -133,6 +133,59 @@ void Parser::verify_create_np() const
 
 #pragma endregion
 
+namespace nlohmann
+{
+  template <>
+  struct adl_serializer<Agent>
+  {
+    static void to_json(nlohmann::json &j, const Agent &a)
+    {
+      j = json{
+          {"available_time", a.get_available_time().count()},
+          {"department", a.get_department()},
+          {"expertise", level_to_string(a.get_expertise())},
+          {"name", a.get_name()}};
+    }
+
+    static void from_json(const nlohmann::json &j, Agent &a)
+    {
+      int available_time = j.at("available_time").get<int>();
+      std::string department = j.at("department").get<std::string>();
+      std::string expertise = j.at("expertise").get<std::string>();
+      std::string name = j.at("name").get<std::string>();
+
+      a = Agent{std::chrono::hours(available_time), department, string_to_level(expertise), name};
+    }
+  };
+
+  template <>
+  struct adl_serializer<Task>
+  {
+    static void to_json(nlohmann::json &j, const Task &t)
+    {
+      j = json{
+          {"estimated_time", t.get_estimated_time().count()},
+          {"dead_line", date_to_string(t.get_dead_line())},
+          {"department", t.get_department()},
+          {"difficulty", level_to_string(t.get_difficulty())},
+          {"title", t.get_title()},
+          {"requirements", t.get_requirements()}};
+    }
+
+    static void from_json(const nlohmann::json &j, Task &t)
+    {
+      int estimated_time = j.at("estimated_time").get<int>();
+      std::string dead_line = j.at("dead_line").get<std::string>();
+      std::string department = j.at("department").get<std::string>();
+      std::string difficulty = j.at("difficulty").get<std::string>();
+      std::string title = j.at("title").get<std::string>();
+      std::string requirements = j.at("requirements").get<std::string>();
+
+      t = Task{std::chrono::hours(estimated_time), string_to_date(dead_line), department, string_to_level(difficulty), title, requirements};
+    }
+  };
+}
+
 #pragma region Agents
 
 std::vector<Agent> Parser::get_agents() const
@@ -227,6 +280,8 @@ Agent Parser::write_agent() const
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   std::cout << "Enter department: ";
   std::getline(std::cin, department);
+
+  department = to_lower(department);
 
   std::cout << "Enter expertise (novice, beginner, competent, proficient, expert): ";
   std::cin >> expertise;
@@ -341,8 +396,11 @@ Task Parser::write_task() const
     std::cout << "Enter a number greater than 0. Try again: ";
   }
 
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   std::cout << "Enter department: ";
-  std::cin >> department;
+  std::getline(std::cin, department);
+
+  department = to_lower(department);
 
   std::cout << "Enter difficulty (novice, beginner, competent, proficient, expert): ";
   std::cin >> difficulty;
@@ -362,3 +420,26 @@ Task Parser::write_task() const
 }
 
 #pragma endregion
+
+void Parser::save_match(const Matcher::MatchT &match) const
+{
+  if (!match.empty())
+  {
+    std::ifstream file_agents(pwd / ".np/agents.json");
+    nlohmann::json agents = nlohmann::json::parse(file_agents);
+
+    for (const std::pair<Agent, std::vector<Task>> &m : match)
+    {
+      for (auto &a : agents)
+      {
+        if (a["name"] == m.first.get_name())
+        {
+          a["assigned_tasks"].push_back(m.second);
+        }
+      }
+    }
+
+    std::ofstream archivo_salida(pwd / ".np/agents.json");
+    archivo_salida << agents.dump(2);
+  }
+}

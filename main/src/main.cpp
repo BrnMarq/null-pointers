@@ -73,6 +73,7 @@ int main(int argc, char *argv[])
       Parser parser{};
       Matcher matcher(parser.get_agents(), parser.get_tasks());
       Matcher::MatchT match = matcher.create_match();
+      parser.save_match(match);
       print_match(match);
     }
   }

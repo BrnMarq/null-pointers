@@ -87,7 +87,7 @@ void print_container(const C &c, char ldelim, char rdelim, std::ostream &out)
 
 void print_match(Matcher::MatchT match)
 {
-    if (match.size() == 0)
+    if (match.empty())
     {
         std::cout << YELLOW << "There's no match to make!" << RESET << std::endl;
         return;
