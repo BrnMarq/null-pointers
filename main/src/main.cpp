@@ -52,20 +52,20 @@ int main(int argc, char *argv[])
       std::cout << GREEN << "New agent added!" << RESET << std::endl;
     }
 
-    else if (arg == "add_task")
-    {
-      Parser parser{};
-      Task task = parser.write_task();
-      // Task t{std::chrono::hours(9), std::chrono::sys_days(), "Depar", level::beginner, "Titulo", "nada"};
-      parser.add_task(task);
-      std::cout << GREEN << "New task added!" << RESET << std::endl;
-    }
-
     else if (arg == "tasks")
     {
       Parser parser{};
       auto tasks = parser.get_tasks();
+
       print_tasks(tasks);
+    }
+
+    else if (arg == "add_task")
+    {
+      Parser parser{};
+      Task task = parser.write_task();
+      parser.add_task(task);
+      std::cout << GREEN << "New task added!" << RESET << std::endl;
     }
 
     else if (arg == "match")

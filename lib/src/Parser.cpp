@@ -124,7 +124,7 @@ void Parser::verify_create_np() const
       }
       else
       {
-        std::cerr << "Error creating" << json_name << "file" << std::endl;
+        std::cerr << "Error creating" << json_name << " file" << std::endl;
         return;
       }
     }
@@ -225,7 +225,7 @@ Agent Parser::write_agent() const
   }
 
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-  std::cout << "Enter departament: ";
+  std::cout << "Enter department: ";
   std::getline(std::cin, department);
 
   std::cout << "Enter expertise (novice, beginner, competent, proficient, expert): ";
