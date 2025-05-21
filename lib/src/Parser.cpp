@@ -238,12 +238,7 @@ void Parser::add_agent(const Agent &agent) const
     return;
   }
 
-  nlohmann::json new_agent =
-      {
-          {"available_time", agent.get_available_time().count()},
-          {"department", agent.get_department()},
-          {"expertise", level_to_string(agent.get_expertise())},
-          {"name", agent.get_name()}};
+  nlohmann::json new_agent = agent;
 
   js_agent.push_back(new_agent);
 
@@ -350,14 +345,7 @@ void Parser::add_task(const Task &task) const
     return;
   }
 
-  nlohmann::json new_task =
-      {
-          {"estimated_time", task.get_estimated_time().count()},
-          {"dead_line", date_to_string(task.get_dead_line())},
-          {"department", task.get_department()},
-          {"difficulty", level_to_string(task.get_difficulty())},
-          {"title", task.get_title()},
-          {"requirements", task.get_requirements()}};
+  nlohmann::json new_task = task;
 
   js_task.push_back(new_task);
 
@@ -427,6 +415,8 @@ void Parser::save_match(const Matcher::MatchT &match) const
   {
     std::ifstream file_agents(pwd / ".np/agents.json");
     nlohmann::json agents = nlohmann::json::parse(file_agents);
+
+    auto age = get_agents();
 
     for (const std::pair<Agent, std::vector<Task>> &m : match)
     {
