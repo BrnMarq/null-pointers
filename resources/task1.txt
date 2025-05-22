@@ -1,0 +1,6 @@
+Refactor legacy codebase
+2025-06-15
+20
+Engineering
+proficient
+C++17, CMake, Unit Testing

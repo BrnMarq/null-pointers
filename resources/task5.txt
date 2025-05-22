@@ -1,0 +1,6 @@
+Document API endpoints
+2025-10-15
+30
+Engineering
+novice
+Markdown, Swagger basics
