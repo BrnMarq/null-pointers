@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
       throw InvalidCommandException(arg);
     }
 
-    if (arg == "np")
+    if (arg == "init")
     {
       Parser parser{};
       parser.verify_create_np();

@@ -2,7 +2,7 @@
 
 float Configs::time_gap_multiplier{1.0f};
 float Configs::difficulty_gap_multiplier{1.0f};
-std::vector<std::string> Configs::valid_program_args{"np", "add_agent", "add_task", "agents", "tasks", "match"};
+std::vector<std::string> Configs::valid_program_args{"init", "add_agent", "add_task", "agents", "tasks", "match"};
 std::vector<std::string> Configs::valid_levels{"novice", "beginner", "competent", "proficient", "expert"};
 
 std::vector<std::string> Departments::departments{};
