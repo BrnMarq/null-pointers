@@ -1,4 +1,6 @@
 #include <algorithm>
+#include <fstream>
+
 #include "Matcher.hpp"
 
 Matcher::Matcher(AgentVectorT _agents, TaskVectorT _tasks) : agents{_agents}, tasks{_tasks}
@@ -76,6 +78,49 @@ bool Matcher::tasks_matched(std::unordered_map<Task, size_t, Task::Hash> tasks_f
     return true;
 }
 
+void Matcher::create_dot_file(std::unordered_map<Agent, size_t, Agent::Hash> source, std::unordered_map<Task, size_t, Task::Hash> sink, ATArcVectorT _arcs) noexcept
+{
+    std::ofstream dot_file("./resources/graph/result.dot");
+    dot_file << "digraph FlowNetwork { \n\
+        rankdir=\"LR\";  // Left-to-right layout \n\
+        node [ fontname=Arial, fontcolor=blue, fontsize=11];\n\
+        edge [ fontname=Arial, fontsize=8 ];\n\
+        \n\
+        // Nodes \n\
+        S [label=\"s\", shape=circle, style=filled, color=lightblue];\n\
+        T [label=\"t\", shape=circle, style=filled, color=lightblue];\n\
+        \n\
+        ";
+    for (const Agent &agent : agents)
+    {
+        dot_file << agent.get_name()[0] << " [shape=circle];\n\ ";
+        source[agent];
+    }
+    for (const Task &task : tasks)
+    {
+        dot_file << task.get_title()[0] << " [shape=circle];\n\ ";
+        sink[task];
+    }
+    for (const ATArcVectorT::value_type &arc : _arcs)
+    {
+        dot_file << arc.get_from().get_name()[0] << "->" << arc.get_to().get_title()[0];
+        // dot_file << "[label=\"" << arc.get_flow() << "/" << arc.get_capacity() << "\", xlabel=\"" << arc.get_weigth() << "\"];\n\ ";
+        dot_file << "[label=\"" << arc.get_flow() << "/" << arc.get_capacity() << "\"];\n\ ";
+    }
+    for (const std::pair<Agent, size_t> source_arc : source)
+    {
+        dot_file << "S->" << source_arc.first.get_name()[0];
+        dot_file << "[label=\"" << source_arc.second << "/" << source_arc.first.get_available_time().count() << "\"];\n\ ";
+    }
+    for (const std::pair<Task, size_t> sink_arc : sink)
+    {
+        dot_file << sink_arc.first.get_title()[0] << "->T";
+        dot_file << "[label=\"" << sink_arc.second << "/" << sink_arc.first.get_estimated_time().count() << "\"];\n\ ";
+    }
+    dot_file << "}";
+    dot_file.close();
+}
+
 Matcher::MatchT Matcher::create_match() noexcept
 {
     MatchT result;
@@ -117,6 +162,8 @@ Matcher::MatchT Matcher::create_match() noexcept
             break;
         }
     }
+
+    create_dot_file(source, sink, arcs);
 
     return result;
 }
