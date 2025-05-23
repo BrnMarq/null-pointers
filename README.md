@@ -10,7 +10,7 @@
 - C++ 20
 - make
 
-# 📂 File structure
+## 📂 File structure
 
 ```
 null-pointers/
@@ -43,7 +43,7 @@ alias np="{path_to_null_pointers_folder}/main/bin/main"
 
 This will allow you to execute the program just using the command **np**
 
-# 🏁 Basic usage
+## 🏁 Basic usage
 
 By now there are a few commands defined, which are:
 
