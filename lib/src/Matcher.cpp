@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "Matcher.hpp"
 
 Matcher::Matcher(AgentVectorT _agents, TaskVectorT _tasks) : agents{_agents}, tasks{_tasks}
@@ -27,7 +28,10 @@ void Matcher::create_arcs() noexcept
             {
                 continue;
             }
-            ATArcVectorT::value_type arc(agent, task);
+            TaskVectorT assigned_tasks = agent.get_assigned_tasks();
+            bool task_found = std::find(assigned_tasks.begin(), assigned_tasks.end(), task) != assigned_tasks.end();
+            size_t flow = task_found ? task.get_estimated_time().count() : 0;
+            ATArcVectorT::value_type arc(agent, task, flow);
             arcs.push_back(arc);
         }
     }
@@ -78,6 +82,14 @@ Matcher::MatchT Matcher::create_match() noexcept
     create_arcs();
     std::unordered_map<Agent, size_t, Agent::Hash> source;
     std::unordered_map<Task, size_t, Task::Hash> sink;
+    for (const Agent &agent : agents)
+    {
+        for (const Task &task : agent.get_assigned_tasks())
+        {
+            source[agent] += task.get_estimated_time().count();
+            sink[task] += task.get_estimated_time().count();
+        }
+    }
     for (ATArcVectorT::value_type &arc : arcs)
     {
         Agent agent = arc.get_from();

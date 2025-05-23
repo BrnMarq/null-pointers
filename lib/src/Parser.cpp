@@ -224,8 +224,9 @@ std::vector<Agent> Parser::get_agents() const
         level _difficulty = string_to_level(t["difficulty"].get<std::string>());
 
         std::string _title = t["title"].get<std::string>();
+        std::string _requirements = t["requirements"].get<std::string>();
 
-        Task task(_estimated_time, _dead_line, _deparment, _difficulty, _title, "");
+        Task task(_estimated_time, _dead_line, _deparment, _difficulty, _title, _requirements);
         agent.assign_task(task);
       }
     }
