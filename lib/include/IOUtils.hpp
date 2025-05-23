@@ -20,7 +20,25 @@ std::ostream &operator<<(std::ostream &out, const Agent &a)
     out << BOLD_CYAN << "Name: " << RESET << a.get_name() << "\n"
         << BOLD_CYAN << "Available time: " << RESET << a.get_available_time().count() << "h" << "\n"
         << BOLD_CYAN << "Departament: " << RESET << a.get_department() << "\n"
-        << BOLD_CYAN << "Level: " << RESET << level_to_string(a.get_expertise());
+        << BOLD_CYAN << "Level: " << RESET << level_to_string(a.get_expertise()) << "\n"
+        << BOLD_CYAN << "Assigned Tasks: [" << RESET << "\n";
+    for (const Task &t : a.get_assigned_tasks())
+    {
+        std::chrono::year_month_day ymd{t.get_dead_line()};
+
+        out << BOLD_CYAN << "\t" << "Estimated time: " << RESET << t.get_estimated_time() << "\n"
+
+            << BOLD_CYAN << "\t" << "Dead line: " << RESET
+            << static_cast<int>(ymd.year()) << "-"
+            << static_cast<unsigned>(ymd.month()) << "-"
+            << static_cast<unsigned>(ymd.day()) << "\n"
+
+            << BOLD_CYAN << "\t" << "Departament: " << RESET << t.get_department() << "\n"
+            << BOLD_CYAN << "\t" << "Difficulty: " << RESET << level_to_string(t.get_difficulty()) << "\n"
+            << BOLD_CYAN << "\t" << "Title: " << RESET << t.get_title() << "\n"
+            << BOLD_CYAN << "\t" << "Requirements: " << RESET << t.get_requirements() << "\n";
+    }
+    out << "]";
 
     return out;
 }
@@ -73,6 +91,7 @@ void print_container(const C &c, char ldelim, char rdelim, std::ostream &out)
 
     if (it != c.end())
     {
+        out << "\n";
         out << *it;
         ++it;
     }
@@ -119,8 +138,6 @@ void print_agents(std::vector<Agent> agents)
     for (auto &a : agents)
     {
         std::cout << a << std::endl;
-        std::cout << BOLD_CYAN << "Assigned tasks: " << RESET;
-        print_container(a.get_assigned_tasks(), '[', ']', std::cout);
         std::cout << '\n'
                   << std::endl;
     }

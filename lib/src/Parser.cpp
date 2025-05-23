@@ -213,6 +213,23 @@ std::vector<Agent> Parser::get_agents() const
 
     Agent agent(_available_time, _deparment, _level, _name);
 
+    if (a.contains("assigned_tasks"))
+    {
+      for (const auto &t : a["assigned_tasks"])
+      {
+        std::chrono::hours _estimated_time(t["estimated_time"].get<int>());
+        std::chrono::sys_days _dead_line = string_to_date(t["dead_line"].get<std::string>());
+        std::string _deparment = t["department"].get<std::string>();
+
+        level _difficulty = string_to_level(t["difficulty"].get<std::string>());
+
+        std::string _title = t["title"].get<std::string>();
+
+        Task task(_estimated_time, _dead_line, _deparment, _difficulty, _title, "");
+        agent.assign_task(task);
+      }
+    }
+
     agents_list.push_back(agent);
   }
 
@@ -316,8 +333,9 @@ std::vector<Task> Parser::get_tasks() const
     level _difficulty = string_to_level(tsk["difficulty"].get<std::string>());
 
     std::string _title = tsk["title"].get<std::string>();
+    std::string _requirements = tsk["requirements"].get<std::string>();
 
-    Task task(_estimated_time, _dead_line, _deparment, _difficulty, _title, "");
+    Task task(_estimated_time, _dead_line, _deparment, _difficulty, _title, _requirements);
 
     task_list.push_back(task);
   };
@@ -424,7 +442,10 @@ void Parser::save_match(const Matcher::MatchT &match) const
       {
         if (a["name"] == m.first.get_name())
         {
-          a["assigned_tasks"].push_back(m.second);
+          for (const Task &task : m.second)
+          {
+            a["assigned_tasks"].push_back(task);
+          }
         }
       }
     }
