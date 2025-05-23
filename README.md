@@ -17,10 +17,10 @@ null-pointers/
 ├── lib/               # Source code
 ├── main/
         ├── src/main.cpp
-        └── bin/main             # Where the commands are defined and what they do
+        └── bin/main             # The program itself, the one that is going to handle the commands
 ├── tests/
         ├── src/test.cpp
-        └── bin/test              # A command that can fill the project with fixed data
+        └── bin/test              # A executable that fills the project with fixed data
 ├── .gitignore
 ├── LICENSE
 ├── Makefile
