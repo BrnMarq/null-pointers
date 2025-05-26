@@ -435,8 +435,6 @@ void Parser::save_match(const Matcher::MatchT &match) const
     std::ifstream file_agents(pwd / ".np/agents.json");
     nlohmann::json agents = nlohmann::json::parse(file_agents);
 
-    auto age = get_agents();
-
     for (const std::pair<Agent, std::vector<Task>> &m : match)
     {
       for (auto &a : agents)
@@ -451,7 +449,7 @@ void Parser::save_match(const Matcher::MatchT &match) const
       }
     }
 
-    std::ofstream archivo_salida(pwd / ".np/agents.json");
-    archivo_salida << agents.dump(2);
+    std::ofstream file_result(pwd / ".np/agents.json");
+    file_result << agents.dump(2);
   }
 }
