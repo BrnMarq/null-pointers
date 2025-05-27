@@ -281,7 +281,7 @@ Agent Parser::write_agent() const
   std::cout << "Enter name: ";
   std::getline(std::cin, name);
 
-  std::cout << "Enter available time: ";
+  std::cout << "Enter available time (in hours): ";
 
   while (!(std::cin >> available_time) || available_time < 0)
   {
@@ -394,7 +394,7 @@ Task Parser::write_task() const
   std::cout << "Enter dead line (format yyyy-mm-dd. Ex: 2025-01-01): ";
   std::cin >> dead_line;
 
-  std::cout << "Enter estimated time: ";
+  std::cout << "Enter estimated time (in hours): ";
 
   while (!(std::cin >> estimated_time) || estimated_time < 0)
   {
