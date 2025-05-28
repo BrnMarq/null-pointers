@@ -298,6 +298,7 @@ Agent Parser::write_agent() const
 
   std::cout << "Enter expertise (novice, beginner, competent, proficient, expert): ";
   std::cin >> expertise;
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
   expertise = to_lower(expertise);
 

@@ -46,10 +46,19 @@ int main(int argc, char *argv[])
 
     else if (arg == "add_agent")
     {
+      int agents;
       Parser parser{};
-      Agent agent = parser.write_agent();
-      parser.add_agent(agent);
-      std::cout << GREEN << "New agent added!" << RESET << std::endl;
+
+      std::cout << "How many agents do you want to add? : ";
+      std::cin >> agents;
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+      for (int i = 0; i < agents; ++i)
+      {
+        Agent agent = parser.write_agent();
+        parser.add_agent(agent);
+        std::cout << GREEN << "New agent added!" << RESET << std::endl;
+      }
     }
 
     else if (arg == "tasks")
@@ -62,10 +71,19 @@ int main(int argc, char *argv[])
 
     else if (arg == "add_task")
     {
+      int tasks;
       Parser parser{};
-      Task task = parser.write_task();
-      parser.add_task(task);
-      std::cout << GREEN << "New task added!" << RESET << std::endl;
+
+      std::cout << "How many tasks do you want to add? : ";
+      std::cin >> tasks;
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+      for (int i = 0; i < tasks; ++i)
+      {
+        Task task = parser.write_task();
+        parser.add_task(task);
+        std::cout << GREEN << "New task added!" << RESET << std::endl;
+      }
     }
 
     else if (arg == "match")
