@@ -14,13 +14,6 @@ int main(int argc, char *argv[])
 {
   std::filesystem::path pwd = std::filesystem::current_path();
 
-  // std::cout << BLUE << "TEXT" << RESET << std::endl;
-  // std::cout << RED << "TEXT" << RESET << std::endl;
-  // std::cout << CYAN << "TEXT" << RESET << std::endl;
-  // std::cout << GREEN << "TEXT" << RESET << std::endl;
-  // std::cout << YELLOW << "TEXT" << RESET << std::endl;
-  // std::cout << MAGENTA << "TEXT" << RESET << std::endl;
-
   if (argc > 1)
   {
     std::string arg(argv[1]);
@@ -88,11 +81,26 @@ int main(int argc, char *argv[])
 
     else if (arg == "match")
     {
+      std::filesystem::path dot_path = pwd / "resources/graph/result.dot";
+      std::filesystem::path result_path = pwd / "resources/graph/result.png";
+
+      std::string command = "dot -Tpng \"" + dot_path.generic_string() + "\" -o \"" + result_path.generic_string() + "\"";
+
       Parser parser{};
       Matcher matcher(parser.get_agents(), parser.get_tasks());
       Matcher::MatchT match = matcher.create_match();
       parser.save_match(match);
+      int result = system(command.c_str());
       print_match(match);
+    }
+    else if (arg == "show_match")
+    {
+      std::filesystem::path image_path = pwd / "resources/graph/result.png";
+
+      std::string command = "xdg-open \"" + image_path.generic_string() + "\"";
+
+      // Ejecutar el comando
+      int result = system(command.c_str());
     }
   }
 

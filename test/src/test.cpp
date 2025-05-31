@@ -15,12 +15,26 @@ std::string get_task_path(int i)
   return tasks_path.generic_string() + std::to_string(i) + std::string(".txt");
 }
 
-int main()
+int main(int argc, char *argv[])
 {
-  for (int i = 1; i < 6; ++i)
+  std::string arg(argv[1]);
+
+  if (arg == "test1")
   {
-    system((std::string("./main/bin/main add_agent < ") + get_agent_path(i)).c_str());
-    system((std::string("./main/bin/main add_task < ") + get_task_path(i)).c_str());
+    for (int i = 1; i < 6; ++i)
+    {
+      system((std::string("./main/bin/main add_agent < ") + get_agent_path(i)).c_str());
+      system((std::string("./main/bin/main add_task < ") + get_task_path(i)).c_str());
+    }
+  }
+
+  else if (arg == "test2")
+  {
+    for (int i = 6; i < 16; ++i)
+    {
+      system((std::string("./main/bin/main add_agent < ") + get_agent_path(i)).c_str());
+      system((std::string("./main/bin/main add_task < ") + get_task_path(i)).c_str());
+    }
   }
 
   return EXIT_SUCCESS;

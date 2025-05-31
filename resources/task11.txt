@@ -1,0 +1,7 @@
+1
+Bug Fix en proyecto
+2025-06-02
+4
+Backend
+expert
+C++17, CMake, Unit Testing

@@ -1,0 +1,7 @@
+1
+Optimizacion de funcion
+30
+2025-06-20
+Backend
+beginner
+C++17, CMake, Unit Testing
