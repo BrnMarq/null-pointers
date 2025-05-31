@@ -93,15 +93,6 @@ int main(int argc, char *argv[])
       int result = system(command.c_str());
       print_match(match);
     }
-    else if (arg == "show_match")
-    {
-      std::filesystem::path image_path = pwd / "resources/graph/result.png";
-
-      std::string command = "xdg-open \"" + image_path.generic_string() + "\"";
-
-      // Ejecutar el comando
-      int result = system(command.c_str());
-    }
   }
 
   return EXIT_SUCCESS;
