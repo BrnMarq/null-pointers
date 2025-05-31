@@ -18,6 +18,8 @@ null-pointers/
 ├── main/
   ├── src/main.cpp
   └── bin/main             # The program itself, the one that is going to handle the commands
+├── resources/
+  ├── graph/              # It contains a .png file with the representation of the match
 ├── tests/
   ├── src/test.cpp
   └── bin/test              # A executable that fills the project with fixed data
@@ -27,7 +29,7 @@ null-pointers/
 ├── README.md
 ```
 
-## 🛠️ How to installl
+## 🛠️ How to install
 
 ```bash
 git clone https://github.com/BrnMarq/null-pointers.git
@@ -62,3 +64,17 @@ np add_agent
 ```
 
 This should prompt you some information in order to save the agent
+
+## ✔ Tests
+
+We provided for you 2 tests. In order to use them, you can use the following commands:
+
+```bash
+./test/bin/test test1
+
+or
+
+./test/bin/test test2
+```
+
+depending on which one you want to use.
