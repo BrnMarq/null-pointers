@@ -1,7 +1,0 @@
-1
-Optimizacion de Query
-2025-06-21
-2
-Backend
-proficient
-C++17, CMake, Unit Testing, SQLServer

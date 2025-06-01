@@ -1,0 +1,31 @@
+5
+Better legacy codebase
+2025-06-15
+20
+Engineering
+proficient
+C++17, CMake, Unit Testing
+UI/UX overhaul
+2025-07-30
+40
+Design
+beginner
+Figma, User research basics
+Optimize database queries
+2025-09-28
+60
+Engineering
+expert
+SQL, Query profiling, Indexing
+Create style guide
+2025-08-10
+15
+Design
+competent
+Color theory, Typography
+Document API endpoints
+2025-10-15
+30
+Engineering
+novice
+Markdown, Swagger basics

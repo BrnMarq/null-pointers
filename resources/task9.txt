@@ -1,7 +1,0 @@
-1
-Rediseno de pagina web
-2025-06-04
-2
-Frontend
-novice
-Design, Color theory, Typography

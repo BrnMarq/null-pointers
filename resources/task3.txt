@@ -1,7 +1,0 @@
-1
-Optimize database queries
-2025-09-28
-60
-Engineering
-expert
-SQL, Query profiling, Indexing

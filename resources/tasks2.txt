@@ -1,0 +1,61 @@
+10
+Crear paleta de colores
+2025-06-02
+3
+Frontend
+novice
+Design, Color theory, Typography
+Desarrollo de funcion
+2025-06-02
+3
+Backend
+novice
+C++17, CMake, Unit Testing
+Idea campana publicitaria
+2025-06-03
+4
+Marketing
+expert
+Marketing
+Rediseno de pagina web
+2025-06-04
+2
+Frontend
+novice
+Design, Color theory, Typography
+Desarrollo de nueva pestana
+2025-06-03
+3
+Frontend
+competent
+Color theory, Typography
+Bug Fix en proyecto
+2025-06-02
+4
+Backend
+expert
+C++17, CMake, Unit Testing
+Test de nueva función
+2025-06-02
+2
+Backend
+novice
+C++17, CMake, Unit Testing
+Server Fixes
+2025-06-10
+3
+Backend
+expert
+C++17, CMake, Unit Testing
+Optimizacion de funcion
+2025-06-20
+30
+Backend
+beginner
+C++17, CMake, Unit Testing
+Optimizacion de Query
+2025-06-21
+2
+Backend
+proficient
+C++17, CMake, Unit Testing, SQLServer

@@ -1,0 +1,41 @@
+10
+Pedro Marquez
+4
+Backend
+expert
+Juan Lopez
+0
+Frontend
+novice
+Maria Perez
+3
+Backend
+competent
+Monica Giraldo
+8
+Backend
+novice
+Carlos Mendez
+4
+Marketing
+proficient
+Luis Silva
+5
+Frontend
+novice
+Valeska Perez
+5
+Frontend
+expert
+Lucas Pop
+1
+Marketing
+novice
+Mateo Rojas
+0
+Frontend
+expert
+Lucia Vielma
+0
+Marketing
+competent

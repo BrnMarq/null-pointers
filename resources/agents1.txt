@@ -1,0 +1,21 @@
+5
+John Smith
+40
+Engineering
+proficient
+Alice Johnson
+25
+Design
+beginner
+Robert Chen
+60
+Engineering
+expert
+Emma Wilson
+35
+Design
+competent
+Michael Brown
+20
+Engineering
+novice
