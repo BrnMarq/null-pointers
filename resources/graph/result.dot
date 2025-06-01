@@ -1,38 +1,26 @@
 digraph FlowNetwork { 
-        rankdir="LR";  // Left-to-right layout 
-        node [ fontname=Arial, fontcolor=blue, fontsize=11];
-        edge [ fontname=Arial, fontsize=8 ];
-        
-        // Nodes 
-        S [label="s", shape=circle, style=filled, color=lightblue];
-        T [label="t", shape=circle, style=filled, color=lightblue];
-        
-        J [shape=circle];
- A [shape=circle];
- R [shape=circle];
- E [shape=circle];
- M [shape=circle];
- B [shape=circle];
- U [shape=circle];
- O [shape=circle];
- C [shape=circle];
- D [shape=circle];
- J->B[label="20/20"];
- R->B[label="0/20"];
- M->B[label="0/20"];
- E->C[label="15/15"];
- A->C[label="0/15"];
- R->O[label="60/60"];
- J->D[label="0/30"];
- R->D[label="0/30"];
- S->J[label="20/40"];
- S->R[label="60/60"];
- S->A[label="0/25"];
- S->E[label="15/35"];
- S->M[label="0/20"];
- D->T[label="0/30"];
- B->T[label="20/20"];
- U->T[label="0/40"];
- O->T[label="60/60"];
- C->T[label="15/15"];
- }
+rankdir="LR"; 
+node [ fontname=Arial, fontcolor=blue, fontsize=11, shape=circle];
+edge [ fontname=Arial, fontsize=8 ];
+"Pedro Marquez""Juan Lopez""Maria Perez""Monica Giraldo""Carlos Mendez""Luis Silva""Valeska Perez""Lucas Pop""Mateo Rojas""Lucia Vielma""Crear paleta de colores""Desarrollo de funcion""Idea campana publicitaria""Rediseno de pagina web""Desarrollo de nueva pestana""Bug Fix en proyecto""Test de nueva función""Server Fixes""Optimizacion de funcion""Optimizacion de Query""Pedro Marquez"->"Bug Fix en proyecto"
+"Monica Giraldo"->"Desarrollo de funcion"
+"Luis Silva"->"Crear paleta de colores"
+"Monica Giraldo"->"Test de nueva función"
+"Maria Perez"->"Desarrollo de funcion"
+"Maria Perez"->"Test de nueva función"
+"Monica Giraldo"->"Bug Fix en proyecto"
+"Pedro Marquez"->"Desarrollo de funcion"
+"Valeska Perez"->"Crear paleta de colores"
+"Pedro Marquez"->"Test de nueva función"
+"Carlos Mendez"->"Idea campana publicitaria"
+"Luis Silva"->"Desarrollo de nueva pestana"
+"Valeska Perez"->"Desarrollo de nueva pestana"
+"Luis Silva"->"Rediseno de pagina web"
+"Valeska Perez"->"Rediseno de pagina web"
+"Pedro Marquez"->"Server Fixes"
+"Maria Perez"->"Server Fixes"
+"Monica Giraldo"->"Server Fixes"
+"Pedro Marquez"->"Optimizacion de Query"
+"Maria Perez"->"Optimizacion de Query"
+"Monica Giraldo"->"Optimizacion de Query"
+}

@@ -82,9 +82,9 @@ int main(int argc, char *argv[])
     else if (arg == "match")
     {
       std::filesystem::path dot_path = pwd / "resources/graph/result.dot";
-      std::filesystem::path result_path = pwd / "resources/graph/result.png";
+      std::filesystem::path result_path = pwd / "resources/graph/result.svg";
 
-      std::string command = "dot -Tpng \"" + dot_path.generic_string() + "\" -o \"" + result_path.generic_string() + "\"";
+      std::string command = "dot -Tsvg \"" + dot_path.generic_string() + "\" -o \"" + result_path.generic_string() + "\"";
 
       Parser parser{};
       Matcher matcher(parser.get_agents(), parser.get_tasks());

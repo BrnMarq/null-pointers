@@ -3,6 +3,19 @@
 
 #include "Matcher.hpp"
 
+std::string crop_string(std::string const &s)
+{
+    std::string::size_type pos = s.find(' ');
+    if (pos != std::string::npos)
+    {
+        return s.substr(0, pos);
+    }
+    else
+    {
+        return s;
+    }
+}
+
 Matcher::Matcher(AgentVectorT _agents, TaskVectorT _tasks) : agents{_agents}, tasks{_tasks}
 {
 }
@@ -81,41 +94,21 @@ bool Matcher::tasks_matched(std::unordered_map<Task, size_t, Task::Hash> tasks_f
 void Matcher::create_dot_file(std::unordered_map<Agent, size_t, Agent::Hash> source, std::unordered_map<Task, size_t, Task::Hash> sink, ATArcVectorT _arcs) noexcept
 {
     std::ofstream dot_file("./resources/graph/result.dot");
-    dot_file << "digraph FlowNetwork { \n\
-        rankdir=\"LR\";  // Left-to-right layout \n\
-        node [ fontname=Arial, fontcolor=blue, fontsize=11];\n\
-        edge [ fontname=Arial, fontsize=8 ];\n\
-        \n\
-        // Nodes \n\
-        S [label=\"s\", shape=circle, style=filled, color=lightblue];\n\
-        T [label=\"t\", shape=circle, style=filled, color=lightblue];\n\
-        \n\
-        ";
+    dot_file << "digraph FlowNetwork { \n"
+                "rankdir=\"LR\"; \n"
+                "node [ fontname=Arial, fontcolor=blue, fontsize=11, shape=circle];\n"
+                "edge [ fontname=Arial, fontsize=8 ];\n";
     for (const Agent &agent : agents)
     {
-        dot_file << agent.get_name()[0] << " [shape=circle];\n\ ";
-        source[agent];
+        dot_file << "\"" << agent.get_name() << "\"";
     }
     for (const Task &task : tasks)
     {
-        dot_file << task.get_title()[0] << " [shape=circle];\n\ ";
-        sink[task];
+        dot_file << "\"" << task.get_title() << "\"";
     }
     for (const ATArcVectorT::value_type &arc : _arcs)
     {
-        dot_file << arc.get_from().get_name()[0] << "->" << arc.get_to().get_title()[0];
-        // dot_file << "[label=\"" << arc.get_flow() << "/" << arc.get_capacity() << "\", xlabel=\"" << arc.get_weigth() << "\"];\n\ ";
-        dot_file << "[label=\"" << arc.get_flow() << "/" << arc.get_capacity() << "\"];\n\ ";
-    }
-    for (const std::pair<Agent, size_t> source_arc : source)
-    {
-        dot_file << "S->" << source_arc.first.get_name()[0];
-        dot_file << "[label=\"" << source_arc.second << "/" << source_arc.first.get_available_time().count() << "\"];\n\ ";
-    }
-    for (const std::pair<Task, size_t> sink_arc : sink)
-    {
-        dot_file << sink_arc.first.get_title()[0] << "->T";
-        dot_file << "[label=\"" << sink_arc.second << "/" << sink_arc.first.get_estimated_time().count() << "\"];\n\ ";
+        dot_file << "\"" << arc.get_from().get_name() << "\"" << "->" << "\"" << arc.get_to().get_title() << "\"\n";
     }
     dot_file << "}";
     dot_file.close();
