@@ -280,6 +280,7 @@ Agent Parser::write_agent() const
 
   std::cout << "Enter name: ";
   std::getline(std::cin, name);
+  name.erase(std::remove(name.begin(), name.end(), '\r'), name.end());
 
   std::cout << "Enter available time (in hours): ";
 
@@ -293,6 +294,7 @@ Agent Parser::write_agent() const
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   std::cout << "Enter department: ";
   std::getline(std::cin, department);
+  department.erase(std::remove(department.begin(), department.end(), '\r'), department.end());
 
   department = to_lower(department);
 
@@ -391,6 +393,7 @@ Task Parser::write_task() const
 
   std::cout << "Enter title: ";
   std::getline(std::cin, title);
+  title.erase(std::remove(title.begin(), title.end(), '\r'), title.end());
 
   std::cout << "Enter dead line (format yyyy-mm-dd. Ex: 2025-01-01): ";
   std::cin >> dead_line;
@@ -407,6 +410,7 @@ Task Parser::write_task() const
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   std::cout << "Enter department: ";
   std::getline(std::cin, department);
+  department.erase(std::remove(department.begin(), department.end(), '\r'), department.end());
 
   department = to_lower(department);
 
@@ -416,6 +420,7 @@ Task Parser::write_task() const
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   std::cout << "Enter requirements (optional): ";
   std::getline(std::cin, requirements);
+  requirements.erase(std::remove(requirements.begin(), requirements.end(), '\r'), requirements.end());
 
   if (title.empty() || !is_valid_date(dead_line) || department.empty() || !is_valid_level(difficulty))
   {
