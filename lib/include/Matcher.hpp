@@ -62,7 +62,9 @@ public:
 
   bool tasks_matched(std::unordered_map<Task, size_t, Task::Hash> tasks_flow) const noexcept;
 
-  void create_dot_file(std::unordered_map<Agent, size_t, Agent::Hash> source, std::unordered_map<Task, size_t, Task::Hash> sink, ATArcVectorT _arcs) noexcept;
+  void create_dot_file(const ATArcVectorT &_arcs, const std::string &file_path) const noexcept;
+
+  ATArcVectorT match_to_arcs(const MatchT &match) const noexcept;
 
   MatchT create_match() noexcept;
 

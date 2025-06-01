@@ -91,20 +91,20 @@ bool Matcher::tasks_matched(std::unordered_map<Task, size_t, Task::Hash> tasks_f
     return true;
 }
 
-void Matcher::create_dot_file(std::unordered_map<Agent, size_t, Agent::Hash> source, std::unordered_map<Task, size_t, Task::Hash> sink, ATArcVectorT _arcs) noexcept
+void Matcher::create_dot_file(const ATArcVectorT &_arcs, const std::string &file_path) const noexcept
 {
-    std::ofstream dot_file("./resources/graph/result.dot");
+    std::ofstream dot_file(file_path);
     dot_file << "digraph FlowNetwork { \n"
                 "rankdir=\"LR\"; \n"
                 "node [ fontname=Arial, fontcolor=blue, fontsize=11, shape=circle];\n"
                 "edge [ fontname=Arial, fontsize=8 ];\n";
     for (const Agent &agent : agents)
     {
-        dot_file << "\"" << agent.get_name() << "\"";
+        dot_file << "\"" << agent.get_name() << "\"\n";
     }
     for (const Task &task : tasks)
     {
-        dot_file << "\"" << task.get_title() << "\"";
+        dot_file << "\"" << task.get_title() << "\"\n";
     }
     for (const ATArcVectorT::value_type &arc : _arcs)
     {
@@ -112,6 +112,20 @@ void Matcher::create_dot_file(std::unordered_map<Agent, size_t, Agent::Hash> sou
     }
     dot_file << "}";
     dot_file.close();
+}
+
+Matcher::ATArcVectorT Matcher::match_to_arcs(const MatchT &match) const noexcept
+{
+    ATArcVectorT result;
+    for (const std::pair<const Agent, Matcher::TaskVectorT> &m : match)
+    {
+        for (const Task &task : m.second)
+        {
+            ATArcVectorT::value_type arc(m.first, task, task.get_estimated_time().count());
+            result.push_back(arc);
+        }
+    }
+    return result;
 }
 
 Matcher::MatchT Matcher::create_match() noexcept
@@ -156,7 +170,17 @@ Matcher::MatchT Matcher::create_match() noexcept
         }
     }
 
-    create_dot_file(source, sink, arcs);
+    ATArcVectorT matched_arcs;
+    std::copy_if(
+        arcs.begin(),
+        arcs.end(),
+        std::back_inserter(matched_arcs),
+        [](const ATArcVectorT::value_type &arc)
+        {
+            return arc.get_flow() > 0;
+        });
+    create_dot_file(arcs, ".np/unmatched.dot");
+    create_dot_file(matched_arcs, ".np/matched.dot");
 
     return result;
 }

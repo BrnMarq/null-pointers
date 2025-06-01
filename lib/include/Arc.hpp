@@ -54,7 +54,7 @@ public:
 
   const size_t get_remaining_capacity() const noexcept;
 
-  void push_flow(size_t &_flow) noexcept;
+  void push_flow(size_t &_flow);
 
 private:
   From from;
@@ -116,7 +116,7 @@ inline const size_t Arc<From, To, Weight, Capacity>::get_remaining_capacity() co
 }
 
 template <class From, class To, class Weight, class Capacity>
-void Arc<From, To, Weight, Capacity>::push_flow(size_t &_flow) noexcept
+void Arc<From, To, Weight, Capacity>::push_flow(size_t &_flow)
 {
   if (_flow > (capacity - flow))
   {

@@ -81,16 +81,21 @@ int main(int argc, char *argv[])
 
     else if (arg == "match")
     {
-      std::filesystem::path dot_path = pwd / "resources/graph/result.dot";
-      std::filesystem::path result_path = pwd / "resources/graph/result.svg";
+      std::filesystem::path dot_path = pwd / ".np/unmatched.dot";
+      std::filesystem::path result_path = pwd / ".np/unmatched.svg";
+
+      std::filesystem::path dot_path2 = pwd / ".np/matched.dot";
+      std::filesystem::path result_path2 = pwd / ".np/matched.svg";
 
       std::string command = "dot -Tsvg \"" + dot_path.generic_string() + "\" -o \"" + result_path.generic_string() + "\"";
+      std::string command2 = "dot -Tsvg \"" + dot_path2.generic_string() + "\" -o \"" + result_path2.generic_string() + "\"";
 
       Parser parser{};
       Matcher matcher(parser.get_agents(), parser.get_tasks());
       Matcher::MatchT match = matcher.create_match();
       parser.save_match(match);
-      int result = system(command.c_str());
+      system(command.c_str());
+      system(command2.c_str());
       print_match(match);
     }
   }
