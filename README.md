@@ -40,7 +40,8 @@ make
 By now, we suggest you to configure an alias in your terminal configurations like this
 
 ```bash
-alias np="{path_to_null_pointers_folder}/main/bin/main"
+cp ./main/bin/main np
+export PATH=$PATH:path_to_np_file
 ```
 
 This will allow you to execute the program just using the command **np**
