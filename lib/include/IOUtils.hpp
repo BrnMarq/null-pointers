@@ -26,7 +26,9 @@ std::ostream &operator<<(std::ostream &out, const Agent &a)
     {
         std::chrono::year_month_day ymd{t.get_dead_line()};
 
-        out << BOLD_CYAN << "\t" << "Estimated time: " << RESET << t.get_estimated_time() << "\n"
+        out << BOLD_CYAN << "\n"
+            << "\t"
+            << "Estimated time: " << RESET << t.get_estimated_time() << "\n"
 
             << BOLD_CYAN << "\t" << "Dead line: " << RESET
             << static_cast<int>(ymd.year()) << "-"
